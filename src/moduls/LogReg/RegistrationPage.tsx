@@ -3,6 +3,7 @@ import { Button, TextField, Container, Typography, Box, FormControl, InputLabel,
 import { useNavigate } from 'react-router-dom';
 import { makeApiRequest } from 'utils/apiRequest';
 import { UserRoutes } from 'utils/types';
+import { StyledContainerLogReg } from 'utils/logRegStyles';
 
 const validateEmail = (email: string) => {
     // Simple email validation pattern
@@ -132,7 +133,14 @@ const RegistrationPage = () => {
 
     if (currentStep === 1) {
         return (
-            <Container component="main" maxWidth="sm">
+            <StyledContainerLogReg component="main" maxWidth="sm">
+            <style type="text/css">
+                {`
+                    body {
+                        background-color: #82b2ff;
+                    }
+                `}
+            </style>
                 <Typography component="h1" variant="h5">Registracija korisnika - Korak 1</Typography>
                 <Box component="form" noValidate sx={{ mt: 1 }}>
                     <TextField
@@ -178,7 +186,7 @@ const RegistrationPage = () => {
                         Nastavi
                     </Button>
                 </Box>
-            </Container>
+            </StyledContainerLogReg>
         );
     } else if (currentStep === 2) {
         return (

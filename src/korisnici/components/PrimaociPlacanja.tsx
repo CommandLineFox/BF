@@ -12,8 +12,9 @@ import Swal from 'sweetalert2';
 import { getJWT, makeApiRequest, makeGetRequest } from 'utils/apiRequest';
 import { BankRoutes, UserRoutes } from 'utils/types';
 import { getMe } from 'utils/getMe';
-import { Paper, Table, TableBody, TableCell, TableContainer, TableRow } from '@mui/material';
+import { AppBar, Paper, Tab, Table, TableBody, TableCell, TableContainer, TableRow, Tabs } from '@mui/material';
 import { ScrollContainer, StyledHeadTableCell, StyledTableCell, StyledTableHead, StyledTableRow } from 'utils/tableStyles';
+import styled from 'styled-components';
 
 
 const MOCK_PRIMAOCI = [
@@ -33,6 +34,24 @@ interface PrimaociPlacanjaProps {
     setDefaultProps: (props: { [key: string]: any }) => void;
 }
 
+const StyledTabs = styled(Tabs)`
+  background-color: #f2f2f2;
+  & > * > * {
+    display: flex!important;
+    justify-content: space-between!important;
+    margin: 6px!important;
+  }
+
+`
+
+const ButtonTab = styled(Tab)`
+  background-color: #718bb0!important;
+  color: white!important;
+  border-radius: 13px!important;
+  &:hover{
+    background-color: #39547a!important;
+  }
+`
 export const PrimaociPlacanja: React.FC<PrimaociPlacanjaProps> = ({ setSelectedOption, setDefaultProps }) => {
     const [primaoci, setPrimaoci] = useState(MOCK_PRIMAOCI);
     const [racuni, setRacuni] = useState([{
@@ -201,10 +220,14 @@ export const PrimaociPlacanja: React.FC<PrimaociPlacanjaProps> = ({ setSelectedO
 
     return (
         <Box>
-            <Button variant="contained" onClick={handleAdd} sx={{ mb: 2 }}>
-                Dodaj primaoca
-            </Button>
             <ScrollContainer style={{ margin: '10px' }}>
+                <AppBar position="static" >
+                    <StyledTabs value={0}>
+                        <Tab label="Lista primalaca" />
+                        <ButtonTab onClick={handleAdd}
+                            label="Dodaj primaoca" />
+                    </StyledTabs>
+                </AppBar>
                 <Table aria-label="simple table">
                     <StyledTableHead>
                         <StyledTableRow>
