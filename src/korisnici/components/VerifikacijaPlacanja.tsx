@@ -8,6 +8,7 @@ import { isNovaUplata, isNoviPrenosSredstava } from 'korisnici/utils/korisniciUt
 import { getJWT, makeApiRequest } from 'utils/apiRequest';
 import { getMe } from 'utils/getMe';
 import { BankRoutes, UserRoutes } from 'utils/types';
+import Swal from 'sweetalert2';
 
 const PrikazPodataka: React.FC<{ podaci: NovaUplata | NoviPrenosSredstava }> = ({ podaci }) => {
     return <div>Placeholder za prikaz podataka</div>;
@@ -46,17 +47,38 @@ const VerifikacijaPlacanja = () => {
 
         if (isNovaUplata(podaci)) {
             const data = await makeApiRequest(BankRoutes.transaction_new_payment, "POST", podaci, false, true)
-            const rac = await data.text()
-            console.log(rac);
-            localStorage.removeItem("uplataPodaci")
+            if (!data) {
+                Swal.fire("Greska", `<div id="resultfromswal">Neuspešno plaćanje</div>`, "error").then(() => {
+                    window.location.reload()
+                })
+                localStorage.removeItem("uplataPodaci")
+            }
+            else {
+                const rac = await data.text()
+                console.log(rac);
+                localStorage.removeItem("uplataPodaci")
+                Swal.fire("Uspeh", `<div id="resultfromswal">Uspešno plaćanje</div>`, "success").then(() => {
+                    window.location.reload()
+                })
+            }
         }
         else if (isNoviPrenosSredstava(podaci)) {
             const data = await makeApiRequest(BankRoutes.transaction_new_transfer, "POST", podaci, false, true)
-            const rac = await data.text()
-            console.log(rac);
-            localStorage.removeItem("prenosPodaci")
+            if (!data) {
+                Swal.fire("Greska", `<div id="resultfromswal">Neušpesan prenos</div>`, "error").then(() => {
+                    window.location.reload()
+                })
+                localStorage.removeItem("prenosPodaci")
+            }
+            else {
+                const rac = await data.text()
+                console.log(rac);
+                localStorage.removeItem("prenosPodaci")
+                Swal.fire("Uspeh", `<div id="resultfromswal">Uspešan prenos</div>`, "success").then(() => {
+                    window.location.reload()
+                })
+            }
         }
-        window.location.reload()
     };
 
     if (podaci == null) {
