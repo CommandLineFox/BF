@@ -1,8 +1,8 @@
-import { loginAdmin, logout } from "../util/util"
+import { loginKorisnik, logout } from "../util/util"
 
 describe('Verifikacija spec', () => {
   beforeEach(() => {
-    loginAdmin(cy);
+    loginKorisnik(cy);
   })
   after(() => {
     //logout(cy)
