@@ -1,17 +1,14 @@
 import { useEffect, useState } from "react";
 import { makeGetRequest } from "../utils/apiRequest";
 import { ExchangeRate } from "utils/types";
+import { Table, TableBody, TableRow } from "@mui/material";
 import {
-  Paper,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-} from "@mui/material";
-
-import { ScrollContainer } from "utils/tableStyles";
+  ScrollContainer,
+  StyledHeadTableCell,
+  StyledTableCell,
+  StyledTableHead,
+  StyledTableRow,
+} from "utils/tableStyles";
 
 const ExchangeRatesTable = () => {
   const [currencyRates, setCurrencyRates] = useState<ExchangeRate[]>([]);
@@ -32,24 +29,24 @@ const ExchangeRatesTable = () => {
   }, []);
 
   return (
-    <ScrollContainer style={{ marginTop: 20 }}>
-      <Table>
-        <TableHead>
+    <ScrollContainer style={{ marginTop: 100 }}>
+      <Table sx={{ minWidth: 650, marginTop: 0 }}>
+        <StyledTableHead>
           <TableRow>
-            <TableCell>Currency</TableCell>
-            <TableCell align="right">
-              Exchange rate in relation to dinar
-            </TableCell>
+            <StyledHeadTableCell>Valuta</StyledHeadTableCell>
+            <StyledHeadTableCell align="right">
+              Kurs u odnosu na dinar
+            </StyledHeadTableCell>
           </TableRow>
-        </TableHead>
-        <TableBody id="exchangeRatesTable">
+        </StyledTableHead>
+        <TableBody>
           {currencyRates?.map((rate) => (
-            <TableRow key={rate.currencyCode}>
-              <TableCell component="th" scope="row">
+            <StyledTableRow key={rate.currencyCode}>
+              <StyledTableCell component="th" scope="row">
                 {rate.currencyCode}
-              </TableCell>
-              <TableCell align="right">{rate.rate}</TableCell>
-            </TableRow>
+              </StyledTableCell>
+              <StyledTableCell align="right">{rate.rate}</StyledTableCell>
+            </StyledTableRow>
           ))}
         </TableBody>
       </Table>
