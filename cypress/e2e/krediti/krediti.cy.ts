@@ -33,7 +33,7 @@ describe('Krediti spec', () => {
     cy.get('[role="option"]').contains('444000000910000033').click()
     cy.get('input[name="branchOffice"]').type('Beograd')
     cy.wait(200)
-    cy.get('button[type="submit"]').click()
+    cy.get("#kwiknimeUwU").click();
     
     cy.wait(500)
   })

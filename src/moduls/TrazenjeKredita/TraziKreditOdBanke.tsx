@@ -245,7 +245,7 @@ const TraziKreditStranica: React.FC = () => {
       />
        {poruka && <p>{poruka}</p>}
       <br />
-      <Button variant="contained" onClick={handlePosalji} disabled={loading}>Pošalji</Button>
+      <Button id="kwiknimeUwU" variant="contained" onClick={handlePosalji} disabled={loading}>Pošalji</Button>
     </StyledFormControl>
   );
 };
