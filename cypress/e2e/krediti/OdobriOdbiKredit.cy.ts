@@ -47,6 +47,7 @@ describe('Kredit spec', () => {
     cy.get('[id="Odobri"]').eq(0).click();
 
     logout(cy)
+    cy.wait(2000)
   })
 
   it('Odbij prvi kredit', () => {
