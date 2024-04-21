@@ -118,6 +118,7 @@ describe('Trazi Krediti spec', () => {
     
     cy.wait(500)
     
+    
   })
   it('Novi Kredit nema salary', () => {
     
@@ -205,6 +206,7 @@ describe('Trazi Krediti spec', () => {
     
     cy.wait(500)
 
+
   })
   it('Novi Kredit nema loanTerm', () => {
     
@@ -234,6 +236,7 @@ describe('Trazi Krediti spec', () => {
     
     cy.wait(500)
     
+
   })
   it('Novi Kredit nema bankAccountNumber', () => {
     
@@ -261,6 +264,7 @@ describe('Trazi Krediti spec', () => {
     
     cy.wait(500)
     
+
   })
   it('Novi Kredit nema branchOffice', () => {
     
@@ -288,7 +292,9 @@ describe('Trazi Krediti spec', () => {
     cy.wait(200)
     cy.get("#kwiknimeUwU").click();
     
+
     cy.wait(500)
     
+
   })
 })

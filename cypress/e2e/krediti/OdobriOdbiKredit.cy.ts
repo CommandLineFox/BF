@@ -81,7 +81,7 @@ describe('Kredit spec', () => {
     cy.wait(200)
     logout(cy)
 
-    cy.wait(200)
+    cy.wait(2000)
     loginAdmin(cy);
     cy.wait(200)
 
