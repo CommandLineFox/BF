@@ -44,7 +44,7 @@ describe('Kredit spec', () => {
 
     cy.visit('http://localhost:3000/listaKredita')
     cy.wait(200) // Sačekajte 200 milisekundi (prilagodite vreme čekanja po potrebi)
-    cy.contains('ODOBRI').eq(0).click()
+    cy.get('[id="Odobri"]').click();
 
     logout(cy)
   })
@@ -79,13 +79,14 @@ describe('Kredit spec', () => {
 
     cy.wait(200)
     logout(cy)
+
     cy.wait(200)
     loginAdmin(cy);
     cy.wait(200)
 
     cy.visit('http://localhost:3000/listaKredita')
     cy.wait(200) // Sačekajte 200 milisekundi (prilagodite vreme čekanja po potrebi)
-    cy.contains('ODBIJ').eq(0).click()
+    cy.get('[id="Odbij"]').click();
 
     logout(cy)
   })

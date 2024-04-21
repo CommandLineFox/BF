@@ -58,8 +58,8 @@ function Zaposlen() {
             <Tabela2 krediti={krediti} onClickRed={handleRedClick}>
                 {(kredit) => (
                     <>
-                        <ButtonStyle variant="contained" onClick={() => odobri(kredit)}>Odobri</ButtonStyle>
-                        <ButtonStyle variant="contained" onClick={() => odbij(kredit)}>Odbij</ButtonStyle>
+                        <ButtonStyle id="Odobri" variant="contained" onClick={() => odobri(kredit)}>Odobri</ButtonStyle>
+                        <ButtonStyle id="Odbij" variant="contained" onClick={() => odbij(kredit)}>Odbij</ButtonStyle>
                     </>
                 )}
             </Tabela2>
