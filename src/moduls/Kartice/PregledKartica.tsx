@@ -79,7 +79,7 @@ export default function PregledKartica() {
                 <AppBar position="static" >
                     <StyledTabs value={0}>
                         <Tab label="Lista Kartica" />
-                        <ButtonTab onClick={() => {
+                        <ButtonTab id="dodajKarticuDugme" onClick={() => {
                             navigate("/dodaj-karticu");
                         }}
                             label="Dodaj Karticu" />
