@@ -23,7 +23,7 @@ const ExchangeRatesTable = () => {
       console.error("Error fetching data:", error);
     }
   };
-
+//162
   useEffect(() => {
     fetchExchange();
   }, []);
