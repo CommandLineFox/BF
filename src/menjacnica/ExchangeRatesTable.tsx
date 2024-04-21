@@ -26,7 +26,7 @@ const ExchangeRatesTable = () => {
       console.error("Error fetching data:", error);
     }
   };
-
+//162
   useEffect(() => {
     fetchExchange();
   }, []);
@@ -42,7 +42,7 @@ const ExchangeRatesTable = () => {
             </TableCell>
           </TableRow>
         </TableHead>
-        <TableBody>
+        <TableBody id="exchangeRatesTable">
           {currencyRates?.map((rate) => (
             <TableRow key={rate.currencyCode}>
               <TableCell component="th" scope="row">
