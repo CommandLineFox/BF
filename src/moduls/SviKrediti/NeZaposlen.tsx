@@ -45,7 +45,7 @@ function NeZaposlen() {
     };
 
     return (
-            <DugmePadding variant="contained" onClick={handleRequestLoan}>
+            <DugmePadding id="TraziKredit" variant="contained" onClick={handleRequestLoan}>
                 <p>Zatraži kredit</p>
             </DugmePadding>
     );
