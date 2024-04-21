@@ -109,7 +109,11 @@ export const PrimaociPlacanja: React.FC<PrimaociPlacanjaProps> = ({ setSelectedO
                 // Regular expression for validation
                 const isValidbrojRacunaPrimaoca = /^\d{18}$/.test(brojRacunaPrimaoca);
 
-                if (!nazivPrimaoca || !brojRacunaPrimaoca || !broj || !sifraPlacanja || !isValidbrojRacunaPrimaoca) {
+                if (!nazivPrimaoca) {
+                    Swal.showValidationMessage(`Unesite naziv primaoca.`);
+                    return false;
+                }
+                if (!brojRacunaPrimaoca || !isValidbrojRacunaPrimaoca) {
                     Swal.showValidationMessage(`Broj racuna mora da ima 18 cifara.`);
                     return false;
                 }
@@ -143,8 +147,8 @@ export const PrimaociPlacanja: React.FC<PrimaociPlacanjaProps> = ({ setSelectedO
             "brojRacunaPosiljaoca": (e.brojRacunaPosiljaoca || "").toString(),
             "nazivPrimaoca": e.nazivPrimaoca.toString(),
             "brojRacunaPrimaoca": e.brojRacunaPrimaoca.toString(),
-            "broj": e.broj.toString(),
-            "sifraPlacanja": e.sifraPlacanja.toString()
+            "broj": e.broj?.toString() || "",
+            "sifraPlacanja": e.sifraPlacanja?.toString() || ""
         })).find(rec => rec.id == id); // Find the recipient by ID
 
 
@@ -179,8 +183,13 @@ export const PrimaociPlacanja: React.FC<PrimaociPlacanjaProps> = ({ setSelectedO
                 const sifraPlacanja = (document.getElementById('sifraPlacanja') as HTMLInputElement).value;
                 const brojRacunaPosiljaoca = (document.getElementById('brojRacunaPosiljaoca') as HTMLSelectElement).value;
 
-                if (!nazivPrimaoca || !brojRacunaPrimaoca || !broj || !sifraPlacanja) {
-                    Swal.showValidationMessage(`Please fill in all fields.`);
+                const isValidbrojRacunaPrimaoca = /^\d{18}$/.test(brojRacunaPrimaoca);
+                if (!nazivPrimaoca) {
+                    Swal.showValidationMessage(`Unesite naziv primaoca.`);
+                    return false;
+                }
+                if (!brojRacunaPrimaoca || !isValidbrojRacunaPrimaoca) {
+                    Swal.showValidationMessage(`Broj racuna mora da ima 18 cifara.`);
                     return false;
                 }
                 return { nazivPrimaoca, brojRacunaPrimaoca, broj, sifraPlacanja, brojRacunaPosiljaoca }; // Include the new attribute in the return statement
@@ -224,7 +233,7 @@ export const PrimaociPlacanja: React.FC<PrimaociPlacanjaProps> = ({ setSelectedO
                 <AppBar position="static" >
                     <StyledTabs value={0}>
                         <Tab label="Lista primalaca" />
-                        <ButtonTab onClick={handleAdd}
+                        <ButtonTab id={"dugmeDodajPrimaoca"} onClick={handleAdd}
                             label="Dodaj primaoca" />
                     </StyledTabs>
                 </AppBar>
@@ -240,7 +249,7 @@ export const PrimaociPlacanja: React.FC<PrimaociPlacanjaProps> = ({ setSelectedO
                     </StyledTableHead>
                     <TableBody>
                         {primaoci.length > 0 ? (
-                            primaoci?.map((recipient) => (
+                            primaoci?.map((recipient, index) => (
                                 <StyledTableRow style={{ cursor: "pointer" }} onClick={(e) => {
                                     setSelectedOption("novoPlacanje");
                                     setDefaultProps([recipient]?.map(e => {
@@ -261,13 +270,13 @@ export const PrimaociPlacanja: React.FC<PrimaociPlacanjaProps> = ({ setSelectedO
                                     <StyledTableCell>{recipient.broj}</StyledTableCell>
                                     <StyledTableCell>{recipient.sifraPlacanja}</StyledTableCell>
                                     <StyledTableCell>
-                                        <IconButton edge="end" aria-label="edit" onClick={(e) => {
+                                        <IconButton id={"primalacEdit" + index} edge="end" aria-label="edit" onClick={(e) => {
                                             e.stopPropagation()
                                             handleEdit(recipient.id.toString())
                                         }}>
                                             <EditIcon />
                                         </IconButton>
-                                        <IconButton edge="end" aria-label="delete" onClick={(e) => {
+                                        <IconButton id={"primalacDelete" + index} edge="end" aria-label="delete" onClick={(e) => {
                                             e.stopPropagation()
                                             handleDelete(recipient.id.toString())
                                         }}>

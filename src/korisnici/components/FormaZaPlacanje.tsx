@@ -81,7 +81,7 @@ export const FormaZaPlacanje: React.FC<PaymentFormProps> = ({ onSave, navigate, 
         }
 
         if (!(parseFloat(iznos) > 0)) {
-            newErrors.iznos = 'Iznos mora biti veći od 0.';
+            newErrors.iznos = 'Morate uneti iznos.';
             isValid = false;
         }
         else if (parseFloat(iznos) > racun.raspolozivo) {
