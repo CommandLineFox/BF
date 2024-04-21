@@ -89,6 +89,6 @@ describe('Kredit spec', () => {
     cy.wait(200) // Sačekajte 200 milisekundi (prilagodite vreme čekanja po potrebi)
     cy.get('[id="Odbij"]').eq(0).click();
 
-    logout(cy)
+
   })
 })
