@@ -16,7 +16,12 @@ describe('Krediti spec', () => {
     cy.wait(200)
     cy.get("#TraziKredit").click()
 
-    cy.get('#vrstaKredita').select('gotovinski')
+    cy.get('#vrstaKredita').click()
+    // Sačekaj da se prikažu opcije
+    cy.wait(200)
+    // Izaberi opciju "Gotovinski"
+    cy.get('[aria-labelledby="vrstaKredita-label vrstaKredita"]').contains('Gotovinski').click()
+    // Popuni ostala polja forme
     cy.get('input[name="amount"]').type('10000')
     cy.get('input[name="loanPurpose"]').type('Kupovina automobila')
     cy.get('input[name="salary"]').type('50000')
@@ -31,7 +36,11 @@ describe('Krediti spec', () => {
     cy.wait(500)
   })
 
-  it('Novo placanje los iznos', () => {
+  it('Novi Kredit losaCena', () => {
+    
+  })
+
+  it('Novi Kredit los', () => {
     
   })
 })
