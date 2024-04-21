@@ -29,7 +29,7 @@ const ExchangeRatesTable = () => {
   }, []);
 
   return (
-    <ScrollContainer style={{ marginTop: 20 }}>
+    <ScrollContainer style={{ marginTop: 100 }}>
       <Table sx={{ minWidth: 650, marginTop: 0 }}>
         <StyledTableHead>
           <TableRow>
