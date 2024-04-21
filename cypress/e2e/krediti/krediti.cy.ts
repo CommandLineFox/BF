@@ -29,6 +29,7 @@ describe('Krediti spec', () => {
     cy.get('input[name="currentEmploymentPeriod"]').type('5 godina')
     cy.get('input[name="loanTerm"]').type('60')
     cy.get('#bankAccountNumber').click()
+    cy.wait(1000)
     cy.get('[role="option"]').contains('444000000910000033').click()
     cy.get('input[name="branchOffice"]').type('Beograd')
     cy.wait(200)
