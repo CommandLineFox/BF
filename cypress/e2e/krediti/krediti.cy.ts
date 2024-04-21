@@ -18,9 +18,9 @@ describe('Krediti spec', () => {
 
     cy.get('#vrstaKredita').click()
     // Sačekaj da se prikažu opcije
-    cy.wait(200)
+    cy.wait(1000)
     // Izaberi opciju "Gotovinski"
-    cy.get('[aria-labelledby="vrstaKredita-label vrstaKredita"]').contains('Gotovinski').click()
+    cy.get('[role="option"]').contains('Gotovinski').click()
     // Popuni ostala polja forme
     cy.get('input[name="amount"]').type('10000')
     cy.get('input[name="loanPurpose"]').type('Kupovina automobila')
@@ -28,7 +28,8 @@ describe('Krediti spec', () => {
     cy.get('input[name="permanentEmployee"]').check()
     cy.get('input[name="currentEmploymentPeriod"]').type('5 godina')
     cy.get('input[name="loanTerm"]').type('60')
-    cy.get('#bankAccountNumber').select('444000000910000033') 
+    cy.get('#bankAccountNumber').click()
+    cy.get('[role="option"]').contains('444000000910000033').click()
     cy.get('input[name="branchOffice"]').type('Beograd')
     cy.wait(200)
     cy.get('button[type="submit"]').click()
