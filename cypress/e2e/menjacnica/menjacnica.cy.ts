@@ -4,7 +4,7 @@ describe("Menjacnica spec", () => {
   beforeEach(() => {
     loginKorisnik(cy);
   });
-  after(() => {});
+  after(() => { });
   it("Menjacnica main page", () => {
     cy.wait(200);
     cy.visit("http://localhost:3000/menjacnica");

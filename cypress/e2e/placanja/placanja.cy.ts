@@ -144,9 +144,9 @@ describe('Placanja spec', () => {
       .children('tr')
       .then(rows => {
         if (rows.length === 1 && rows.eq(0).find('td').length === 1) {
-          initialRowCount = 0; 
+          initialRowCount = 0;
         } else {
-          initialRowCount = rows.length; 
+          initialRowCount = rows.length;
         }
 
         cy.get("#dugmeDodajPrimaoca").click();
