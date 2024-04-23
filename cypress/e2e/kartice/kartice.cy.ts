@@ -53,6 +53,7 @@ describe('Kartice spec', () => {
              //Deo za dodavanje
 
              loginKorisnik2(cy);
+             cy.wait(1000);
              cy.visit('http://localhost:3000/kartice');
              cy.wait(1000);
 
@@ -67,6 +68,7 @@ describe('Kartice spec', () => {
         //Deo za dodavanje
 
         loginAdmin(cy);
+        cy.wait(2000);
         cy.visit('http://localhost:3000/kartice');
         cy.wait(1000);
 
@@ -81,6 +83,7 @@ it('Rad sa karticama aktiviraj deaktiviraj', () => {
     //Deo za dodavanje
 
     loginAdmin(cy);
+    cy.wait(2000);
     cy.visit('http://localhost:3000/kartice');
     cy.wait(1000);
 
