@@ -22,6 +22,7 @@ export default function DetaljiKartice() {
   const number = searchParams.get("number");
   const me = getMe();
 
+  
   useEffect(() => {
     if (number) {
       console.log(number);
@@ -73,7 +74,7 @@ export default function DetaljiKartice() {
       <Button onClick={() => setShowDetails(!showDetails)}>{showDetails ? "Sakrij informacije" : "Prikaži informacije"}</Button>
       {me?.permission ? kartica.status !== 'aktivna' && <Button onClick={() => handleStatusChange('aktivna')}>Aktiviraj</Button> : null}
       {me?.permission ? kartica.status !== 'deaktivirana' && <Button onClick={() => handleStatusChange('deaktivirana')}>Deaktiviraj</Button> : null}
-      {me?.permission ? kartica.status !== 'blokirana' && <Button onClick={() => handleStatusChange('blokirana')}>Blokiraj</Button> : null}
+      {kartica.status !== 'blokirana' && <Button onClick={() => handleStatusChange('blokirana')}>Blokiraj</Button>}
     </Card>
     <ListaTransakcija transakcije={transakcije}></ListaTransakcija>
   </div>

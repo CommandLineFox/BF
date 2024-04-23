@@ -2,7 +2,9 @@ import { loginAdmin, loginKorisnik, logout } from "../util/util"
 
 describe('Kartice spec', () => {
     it('Rad sa karticama', () => {
-        loginKorisnik(cy);
+
+        //Dodaj kartice
+        loginAdmin(cy);
         cy.get('.idRacunaTd0').invoke('text').then(brojRacuna => {
             cy.visit('http://localhost:3000/kartice');
             cy.wait(1000);
@@ -25,8 +27,9 @@ describe('Kartice spec', () => {
                     cy.get("#brojRacunaInputt").type(brojRacuna);
                     cy.get("#buttonKreiraj").click();
 
-
                     logout(cy);
+                    cy.wait(2000);
+                    //Deo za dodavanje
                     loginKorisnik(cy);
                     cy.visit('http://localhost:3000/kartice');
                     cy.wait(1000);

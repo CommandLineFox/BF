@@ -5,6 +5,7 @@ import { makeGetRequest } from "../utils/apiRequest";
 import styled from "styled-components";
 import { Account, BankRoutes, ExchangeRate } from "utils/types";
 import { Box, Button, MenuItem, TextField, Typography } from "@mui/material";
+import { Console } from "console";
 
 const StyledParagraph = styled.p`
   margin-left: 2.5px;
@@ -84,7 +85,7 @@ const ExchangeMainSection = ({
   const [saRacuna2, setSaRacuna2] = useState<Account>();
   const [naRacun2, setNaRacun2] = useState<Account>();
   const [exchages, setExhanges] = useState<ExchangeRate[]>([]);
-  const [iznos2, setIznos2] = useState<boolean>(false);
+  const [iznos2, setIznos2] = useState<string>("");
   const [error, setError] = useState<String>("");
 
   useEffect(() => {
@@ -93,17 +94,23 @@ const ExchangeMainSection = ({
   }, []);
 
   const handleSetError = () => {
-    saRacuna2 && naRacun2 && iznos2
-      ? setDetaljiTransfera(true)
-      : !saRacuna2 && !naRacun2 && !iznos2
-      ? setError("Morate da unesete sva polja.")
-      : !saRacuna2
-      ? setError("Morate da unesete broj racuna sa kog saljete novac.")
-      : !naRacun2
-      ? setError("Morate da unesete broj racuna na koji saljete novac.")
-      : setError("Morate da unesete iznos.");
-  };
+     
+      // Provera pojedinačnih polja
+      if (!saRacuna2) {
+        setError("Morate da unesete broj računa sa kog šaljete novac.");
+      } else if (!naRacun2) {
+        setError("Morate da unesete broj računa na koji šaljete novac.");
+      } else if (!iznos2 || iznos2.trim() === '') {
+        setError("Morate da unesete iznos.");
+      } else if (/[^0-9]/.test(iznos2)) { // Provera da li je iznos2 broj
+        setError("Iznos mora biti numerička vrednost.");
+      } else {
+        console.log("AAAAAAAAAAAAAA");
+        console.log(parseFloat(iznos2.trim()));
+      setDetaljiTransfera(true);
+      }
 
+  };
   const fetchExchange = async () => {
     try {
       const data = await makeGetRequest(`/exchange`);
@@ -166,7 +173,7 @@ const ExchangeMainSection = ({
             required={true}
             onChange={(e) => {
               setIznos(e.target.value);
-              setIznos2(true);
+              setIznos2(e.target.value);
               setIznosError(false);
             }}
           />
@@ -244,14 +251,12 @@ const ExchangeMainSection = ({
           : {findExchangeRate(saRacuna2?.currency, naRacun2?.currency)}
         </StyledDiv>
         <StyledButtonsDiv>
-          <StyledButton id="odustaniButton">Odustani</StyledButton>
+          
           <StyledButton
             type="submit"
             id="nastaviButton"
             onClick={() =>
-              saRacuna2 && naRacun2 && iznos2
-                ? setDetaljiTransfera(true)
-                : handleSetError()
+              handleSetError()
             }
           >
             Nastavi

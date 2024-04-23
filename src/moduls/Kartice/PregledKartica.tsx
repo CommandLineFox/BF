@@ -79,10 +79,14 @@ export default function PregledKartica() {
                 <AppBar position="static" >
                     <StyledTabs value={0}>
                         <Tab label="Lista Kartica" />
-                        <ButtonTab id="dodajKarticuDugme" onClick={() => {
-                            navigate("/dodaj-karticu");
-                        }}
-                            label="Dodaj Karticu" />
+                        <ButtonTab
+                            id="dodajKarticuDugme"
+                            onClick={() => {
+                                navigate("/dodaj-karticu");
+                            }}
+                            label="Dodaj Karticu"
+                            style={{ display: jeZaposleni ? 'block' : 'none' }} // Ovde postavljamo da se dugme prikazuje samo ako je korisnik zaposleni
+                        />
                     </StyledTabs>
                 </AppBar>
                 <Table sx={{ minWidth: 650 }}>
