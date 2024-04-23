@@ -36,17 +36,17 @@ describe('Kartice spec', () => {
                     } else {
                         initialRowCountUser = rows.length;
                     }
-                    logout(cy);
-                    loginAdmin(cy);
+                    
                     cy.wait(1000);
                     cy.visit('http://localhost:3000/kartice');
                     cy.get("#dodajKarticuDugme").click();
                     cy.get("#brojRacunaInputt").type(first18Chars);
                     cy.get("#buttonKreiraj").click();
-
+                    cy.wait(10000);
                     logout(cy);
                     cy.wait(2000);
                     //Deo za dodavanje
+
                     loginKorisnik(cy);
                     cy.visit('http://localhost:3000/kartice');
                     cy.wait(1000);
