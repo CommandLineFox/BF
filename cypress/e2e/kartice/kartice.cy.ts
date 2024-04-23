@@ -9,12 +9,14 @@ describe('Kartice spec', () => {
         cy.get('tbody > tr').first().click();
         cy.wait(2000);
 
+        var first18Chars="";
         cy.get('#RacuniTabela').should('exist').then(() => {
-            cy.log('POSTOJI');
+
             cy.get('#RacuniTabela tr:first-child').invoke('text').then((text) => {
                 // text sadrži vrednost iz prve kolone prvog reda
                 // ovde možeš izvršiti dalje provere ili akcije sa ovom vrednošću
-                cy.log('Vrednost iz prve kolone prvog reda:', text);
+                first18Chars = text.substring(0, 18);
+                cy.log('Prvih 18 karaktera teksta:', first18Chars);
             });
             
         });
@@ -39,7 +41,7 @@ describe('Kartice spec', () => {
                     cy.wait(1000);
                     cy.visit('http://localhost:3000/kartice');
                     cy.get("#dodajKarticuDugme").click();
-                   
+                    cy.get("#brojRacunaInputt").type(first18Chars);
                     cy.get("#buttonKreiraj").click();
 
                     logout(cy);
