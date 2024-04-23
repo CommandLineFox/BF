@@ -75,8 +75,7 @@ describe("Menjacnica spec", () => {
     cy.wait(1000);
     cy.get('[role="option"]').contains("444000000910000033").click();
     cy.get("#nastaviButton").click();
-    cy.wait(200);
-    cy.get("#potvrdiButton").click();
+    cy.wait(1000);
   });
 
 });

@@ -179,7 +179,7 @@ const UserInfoTable: React.FC = () => {
                 </StyledTableCentered>
               </TableRow>
             </TableHead>
-            <TableBody>
+            <TableBody id="RacuniTabela">
               {accounts?.map((account) => (
                 <TableRow key={account.brojRacuna}>
                   <HighlightableStyledTableCentered id={account.brojRacuna} component="th" scope="row" onClick={handleAccountDetails}>

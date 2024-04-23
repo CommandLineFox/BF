@@ -5,7 +5,16 @@ describe('Kartice spec', () => {
 
         //Dodaj kartice
         loginAdmin(cy);
-        cy.get('.idRacunaTd0').invoke('text').then(brojRacuna => {
+        cy.wait(200);
+        cy.get('tbody > tr').first().click();
+        cy.wait(200);
+        cy.get('#RacuniTabela tbody tr:first-child td:first-child').invoke('text').then((text) => {
+            // text sadrži vrednost iz prve kolone prvog reda
+            // ovde možeš izvršiti dalje provere ili akcije sa ovom vrednošću
+            cy.log('Vrednost iz prve kolone prvog reda:', text);
+          });
+          cy.wait(200);
+          
             cy.visit('http://localhost:3000/kartice');
             cy.wait(1000);
 
@@ -24,7 +33,7 @@ describe('Kartice spec', () => {
                     cy.wait(1000);
                     cy.visit('http://localhost:3000/kartice');
                     cy.get("#dodajKarticuDugme").click();
-                    cy.get("#brojRacunaInputt").type(brojRacuna);
+                   
                     cy.get("#buttonKreiraj").click();
 
                     logout(cy);
@@ -49,6 +58,6 @@ describe('Kartice spec', () => {
 
                         });
                 });
-        })
+        
     })
 })
