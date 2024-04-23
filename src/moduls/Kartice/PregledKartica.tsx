@@ -67,7 +67,7 @@ export default function PregledKartica() {
 
     const handleRowClick = (kartica: Kartica) => {
         localStorage.setItem('selectedKartica', JSON.stringify(kartica));
-        window.location.replace("/kartica?id=" + kartica.id);
+        window.location.replace("/kartica?number=" + kartica.number);
     };
 
     return (
