@@ -8,13 +8,19 @@ describe('Kartice spec', () => {
         cy.wait(200);
         cy.get('tbody > tr').first().click();
         cy.wait(200);
-        cy.get('#RacuniTabela tbody tr:first-child td:first-child').invoke('text').then((text) => {
-            // text sadrži vrednost iz prve kolone prvog reda
-            // ovde možeš izvršiti dalje provere ili akcije sa ovom vrednošću
-            cy.log('Vrednost iz prve kolone prvog reda:', text);
-          });
+
+        cy.get('#RacuniTabela').should('exist').then(() => {
+            cy.log('POSTOJI');
+            cy.get('#RacuniTabela tbody > tr:first-child > td:first-child').invoke('text').then((text) => {
+                // text sadrži vrednost iz prve kolone prvog reda
+                // ovde možeš izvršiti dalje provere ili akcije sa ovom vrednošću
+                cy.log('Vrednost iz prve kolone prvog reda:', text);
+            });
+            
+        });
+
           cy.wait(200);
-          
+
             cy.visit('http://localhost:3000/kartice');
             cy.wait(1000);
 
