@@ -1,4 +1,4 @@
-import { loginAdmin, loginKorisnik, logout } from "../util/util"
+import { loginAdmin, loginKorisnik2, logout } from "../util/util"
 
 describe('Kartice spec', () => {
     it('Rad sa karticama', () => {
@@ -47,7 +47,7 @@ describe('Kartice spec', () => {
                     cy.wait(2000);
                     //Deo za dodavanje
 
-                    loginKorisnik(cy);
+                    loginKorisnik2(cy);
                     cy.visit('http://localhost:3000/kartice');
                     cy.wait(1000);
 
