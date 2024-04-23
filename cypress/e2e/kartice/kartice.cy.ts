@@ -11,7 +11,7 @@ describe('Kartice spec', () => {
 
         cy.get('#RacuniTabela').should('exist').then(() => {
             cy.log('POSTOJI');
-            cy.get('#RacuniTabela tr:first-child td:first-child').invoke('text').then((text) => {
+            cy.get('#RacuniTabela tr:first-child').invoke('text').then((text) => {
                 // text sadrži vrednost iz prve kolone prvog reda
                 // ovde možeš izvršiti dalje provere ili akcije sa ovom vrednošću
                 cy.log('Vrednost iz prve kolone prvog reda:', text);
