@@ -10,13 +10,8 @@ describe('Provera racuna', () => {
   it('pravi racun', () => {
 
     cy.wait(2000)
-    cy.get('table').first().within(() => {
-        // Klik na prvi red i prvu kolonu
-            cy.get('tr:first').within(() => {
-            cy.get('td:first').click();
-            });
+    cy.get('table tbody tr:first-child td:first-child').click();
 
-        })
 
         cy.wait(2000)
         cy.contains('button', "Dodaj racun").click();
