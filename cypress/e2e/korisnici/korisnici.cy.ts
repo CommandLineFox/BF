@@ -24,9 +24,9 @@ describe('Provera kursa spec', () => {
     cy.get('input[name="prezime"]').type(prezime);
     cy.get('input[name="jmbg"]').type(jmbg);
     cy.get('input[name="date"]').type(datumRodjenja);
-    cy.get('select[name="Pol"]').click()
-    cy.wait(1000)
-    cy.get('[role="option"]').contains('Musko').click()
+    cy.get('select[name="pol"]').click();
+    cy.wait(1000);
+    cy.get('[role="option"]').contains('Musko').click();
     cy.get('input[name="adresa"]').type(adresa);
     cy.get('input[name="email"]').type(email);
     cy.get('input[name="brojTelefona"]').type(brojTelefona);
