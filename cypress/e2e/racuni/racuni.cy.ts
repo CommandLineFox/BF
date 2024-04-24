@@ -19,7 +19,9 @@ describe('Provera racuna', () => {
 
         cy.wait(2000)
 
-        cy.get('#mui-component-select-Tip').select('tekuci');
+        cy.get('#mui-component-select-Tip').click();
+
+    
 
         cy.wait(2000)
 
