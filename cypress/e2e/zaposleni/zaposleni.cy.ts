@@ -1,13 +1,13 @@
 import { loginAdmin, loginKorisnik, logout } from "../util/util"
 
-describe('Provera firme spec', () => {
+describe('Provera zaposlenog spec', () => {
   beforeEach(() => {
     loginAdmin(cy);
   })
   after(() => {
     //logout(cy)
   })
-  it('Admin dodavanje firme', () => {
+  it('Admin dodavanje zaposlenog', () => {
    
     cy.wait(2000);
 
@@ -43,7 +43,7 @@ describe('Provera firme spec', () => {
 
   })
 
-  it('Admin dodavanje firme no name', () => {
+  it('Admin dodavanje zaposlenog no name', () => {
    
     cy.wait(2000);
 
@@ -80,7 +80,7 @@ describe('Provera firme spec', () => {
 
   })
 
-  it('Admin dodavanje firme no suername', () => {
+  it('Admin dodavanje zaposlenog no suername', () => {
    
     cy.wait(2000);
 
@@ -117,7 +117,7 @@ describe('Provera firme spec', () => {
 
   })
 
-  it('Admin dodavanje firme no username', () => {
+  it('Admin dodavanje zaposlenog no username', () => {
    
     cy.wait(2000);
 
@@ -155,7 +155,7 @@ describe('Provera firme spec', () => {
 
   })
 
-  it('Admin dodavanje firme no jmbg', () => {
+  it('Admin dodavanje zaposlenog no jmbg', () => {
    
     cy.wait(2000);
 
@@ -193,7 +193,7 @@ describe('Provera firme spec', () => {
 
   })
 
-  it('Admin dodavanje firme  no password', () => {
+  it('Admin dodavanje zaposlenog no password', () => {
    
     cy.wait(2000);
 
@@ -230,7 +230,7 @@ describe('Provera firme spec', () => {
 
   })
 
-  it('Admin dodavanje firme', () => {
+  it('Admin dodavanje zaposlenog no datum', () => {
    
     cy.wait(2000);
 
@@ -268,7 +268,7 @@ describe('Provera firme spec', () => {
 
   })
 
-  it('Admin dodavanje firme', () => {
+  it('Admin dodavanje zaposlenog no pol', () => {
    
     cy.wait(2000);
 
@@ -306,7 +306,7 @@ describe('Provera firme spec', () => {
 
   })
 
-  it('Admin dodavanje firme', () => {
+  it('Admin dodavanje zaposlenog no adresa', () => {
    
     cy.wait(2000);
 
@@ -344,7 +344,7 @@ describe('Provera firme spec', () => {
 
   })
 
-  it('Admin dodavanje firme no email', () => {
+  it('Admin dodavanje zaposlenog no email', () => {
    
     cy.wait(2000);
 
@@ -382,7 +382,7 @@ describe('Provera firme spec', () => {
 
   })
 
-  it('Admin dodavanje firme', () => {
+  it('Admin dodavanje zaposlenog no pozicija', () => {
    
     cy.wait(2000);
 
@@ -420,7 +420,7 @@ describe('Provera firme spec', () => {
 
   })
 
-  it('Admin dodavanje firme', () => {
+  it('Admin dodavanje zaposlenog no department', () => {
    
     cy.wait(2000);
 
@@ -458,7 +458,7 @@ describe('Provera firme spec', () => {
 
   })
 
-  it('Admin dodavanje firme', () => {
+  it('Admin dodavanje zaposlenog', () => {
    
     cy.wait(2000);
 

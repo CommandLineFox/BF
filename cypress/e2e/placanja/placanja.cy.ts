@@ -66,7 +66,7 @@ describe('Placanja spec', () => {
     cy.get("#submitbuttonpaymentform").click()
     cy.visit('http://localhost:3000/verifikacija')
     cy.get("button").last().click()
-    cy.wait(300)
+    cy.wait(1000)
     cy.get("input").last().invoke('val').then((value: any) => {
       if (!value) {
         return;
