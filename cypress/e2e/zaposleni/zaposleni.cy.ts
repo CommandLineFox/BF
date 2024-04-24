@@ -16,7 +16,7 @@ describe('Provera firme spec', () => {
 
   
 
-    cy.get('#lista-zaposlenih-tab').click();
+    cy.get('#dodaj-zaposlenog-tab').click({ force: true });
     cy.wait(2000);
 
     it('should submit form with valid data', () => {
@@ -54,7 +54,7 @@ describe('Provera firme spec', () => {
 
   
 
-    cy.get('#lista-zaposlenih-tab').click();
+    cy.get('#dodaj-zaposlenog-tab').click({ force: true });
     cy.wait(2000);
 
     it('should submit form with valid data', () => {
