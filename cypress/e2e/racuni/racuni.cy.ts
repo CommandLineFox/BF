@@ -31,6 +31,8 @@ describe('Provera racuna', () => {
         cy.get('[role="option"]').contains('Studentski').click()
 
         
+        cy.contains('button', "Pretraga Korisnika").click();
+
         cy.wait(2000)
         
         cy.contains('button', "Kreiraj").click();
