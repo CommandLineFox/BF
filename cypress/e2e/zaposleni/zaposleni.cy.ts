@@ -16,7 +16,7 @@ describe('Provera firme spec', () => {
 
   
 
-    cy.contains('button', 'Dodaj Zaposlenog').click();
+    cy.get('#lista-zaposlenih-tab').click();
     cy.wait(200);
 
     it('should submit form with valid data', () => {
@@ -54,7 +54,7 @@ describe('Provera firme spec', () => {
 
   
 
-    cy.contains('button', 'Dodaj Zaposlenog').click();
+    cy.get('#lista-zaposlenih-tab').click();
     cy.wait(200);
 
     it('should submit form with valid data', () => {
@@ -91,7 +91,7 @@ describe('Provera firme spec', () => {
 
   
 
-    cy.contains('button', 'Dodaj Zaposlenog').click();
+    cy.get('#lista-zaposlenih-tab').click();
     cy.wait(200);
 
     it('should submit form with valid data', () => {
@@ -119,7 +119,7 @@ describe('Provera firme spec', () => {
 
   })
 
-  it('Admin dodavanje firme', () => {
+  it('Admin dodavanje firme no username', () => {
    
     cy.wait(200);
 
@@ -128,7 +128,7 @@ describe('Provera firme spec', () => {
 
   
 
-    cy.contains('button', 'Dodaj Zaposlenog no username').click();
+    cy.get('#lista-zaposlenih-tab').click();
     cy.wait(200);
 
     it('should submit form with valid data', () => {
@@ -166,7 +166,7 @@ describe('Provera firme spec', () => {
 
   
 
-    cy.contains('button', 'Dodaj Zaposlenog').click();
+    cy.get('#lista-zaposlenih-tab').click();
     cy.wait(200);
 
     it('should submit form with valid data', () => {
@@ -241,7 +241,7 @@ describe('Provera firme spec', () => {
 
   
 
-    cy.contains('button', 'Dodaj Zaposlenog').click();
+    cy.get('#lista-zaposlenih-tab').click();
     cy.wait(200);
 
     it('should submit form with valid data no date', () => {
@@ -279,7 +279,7 @@ describe('Provera firme spec', () => {
 
   
 
-    cy.contains('button', 'Dodaj Zaposlenog').click();
+    cy.get('#lista-zaposlenih-tab').click();
     cy.wait(200);
 
     it('should submit form with valid data no Pol', () => {
@@ -317,7 +317,7 @@ describe('Provera firme spec', () => {
 
   
 
-    cy.contains('button', 'Dodaj Zaposlenog').click();
+    cy.get('#lista-zaposlenih-tab').click();
     cy.wait(200);
 
     it('should submit form with valid data no adresa', () => {
@@ -355,7 +355,7 @@ describe('Provera firme spec', () => {
 
   
 
-    cy.contains('button', 'Dodaj Zaposlenog').click();
+    cy.get('#lista-zaposlenih-tab').click();
     cy.wait(200);
 
     it('should submit form with valid data', () => {
@@ -431,7 +431,7 @@ describe('Provera firme spec', () => {
 
   
 
-    cy.contains('button', 'Dodaj Zaposlenog').click();
+    cy.get('#lista-zaposlenih-tab').click();
     cy.wait(200);
 
     it('should submit form with valid data no radnik', () => {

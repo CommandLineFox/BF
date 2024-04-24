@@ -89,11 +89,11 @@ const EmployeeListPage: React.FC = () => {
       <TableWrapper>
         <StyledTable>
           <AppBar position="static" >
-            <StyledTabs value={0}>
-              <Tab label="Lista Zaposlenih" />
-              <ButtonTab onClick={handleCreateEmployee}
-                label="Dodaj Zaposlenog" />
-            </StyledTabs>
+          <StyledTabs value={0}>
+            <Tab label="Lista Zaposlenih" id="lista-zaposlenih-tab" />
+            <ButtonTab onClick={handleCreateEmployee} label="Dodaj Zaposlenog" id="dodaj-zaposlenog-tab" />
+          </StyledTabs>
+
           </AppBar>
           <EmployeeList employees={emp} />
         </StyledTable>
