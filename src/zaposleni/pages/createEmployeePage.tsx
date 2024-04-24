@@ -281,6 +281,7 @@ const CreateEmployeePage: React.FC = () => {
               <InputLabel id="sex-label">Pol</InputLabel>
               <StyledSelect
                 labelId="sex-label"
+                id="PolId"
                 name="Pol"
                 value={formData.pol}
                 onChange={handleSexChange}

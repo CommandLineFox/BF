@@ -26,7 +26,8 @@ describe('Provera firme spec', () => {
     cy.get('input[name="password"]').type('lozinka123');
     cy.get('input[name="saltPassword"]').type('lozinka123');
     cy.get('input[name="date"]').type('2000-01-01');
-    cy.get('select[name="Pol"]').select('Musko');
+    cy.get('#PolId').click();
+    cy.contains('Musko').click({force: true});
     cy.get('input[name="adresa"]').type('Adresa 123');
     cy.get('input[name="email"]').type('marko@example.com');
     cy.get('input[name="brojTelefona"]').type('123456789');
@@ -62,7 +63,8 @@ describe('Provera firme spec', () => {
     cy.get('input[name="password"]').type('lozinka123');
     cy.get('input[name="saltPassword"]').type('lozinka123');
     cy.get('input[name="date"]').type('2000-01-01');
-    cy.get('select[name="Pol"]').select('Musko');
+    cy.get('#PolId').click();
+    cy.contains('Musko').click({force: true});
     cy.get('input[name="adresa"]').type('Adresa 123');
     cy.get('input[name="email"]').type('marko@example.com');
     cy.get('input[name="brojTelefona"]').type('123456789');
