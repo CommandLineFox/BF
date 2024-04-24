@@ -8,7 +8,7 @@ describe('Kredit spec', () => {
     //logout(cy)
   })
   it('Odobri prvi kredit', () => {
-    
+
     loginKorisnik(cy);
     cy.wait(200)
     cy.visit('http://localhost:3000/listaKredita')
@@ -33,7 +33,7 @@ describe('Kredit spec', () => {
     cy.get('input[name="branchOffice"]').type('Beograd')
     cy.wait(200)
     cy.get("#kwiknimeUwU").click();
-    
+
     cy.wait(500)
 
     cy.wait(200)
@@ -75,7 +75,7 @@ describe('Kredit spec', () => {
     cy.get('input[name="branchOffice"]').type('Beograd')
     cy.wait(200)
     cy.get("#kwiknimeUwU").click();
-    
+
     cy.wait(500)
 
     cy.wait(200)

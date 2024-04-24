@@ -1,4 +1,4 @@
-export function resetAndGo(cy:Cypress.cy){
+export function resetAndGo(cy: Cypress.cy) {
     cy.wait(200)
     cy.visit('http://localhost:3000/placanja')
     cy.wait(300)

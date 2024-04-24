@@ -15,10 +15,10 @@ describe('Provera kursa spec', () => {
 
     cy.get("#rateCurrencyItemToHKD").click()
     cy.get("#rateValue").invoke('text').then((text) => {
-        const rate = parseFloat(text); 
-        expect(rate).to.be.gt(0); 
-      });
-      
+      const rate = parseFloat(text);
+      expect(rate).to.be.gt(0);
+    });
+
   })
   it('Testiranje inputa na slovnim karakterima', () => {
     cy.get("#conversionRateTf").type("abc!@#");
@@ -29,12 +29,12 @@ describe('Provera kursa spec', () => {
     cy.get("#rateValue").invoke('text').then((text) => {
       const rate = parseFloat(text);
       if (!isNaN(rate)) {
-        expect(rate).to.be.eq(0); 
+        expect(rate).to.be.eq(0);
       } else {
-        expect(text.trim()).to.be.empty; 
+        expect(text.trim()).to.be.empty;
       }
     });
 
   });
- 
+
 })
