@@ -23,13 +23,13 @@ describe('Provera racuna', () => {
 
         cy.get('[role="option"]').contains('Tekuci').click()
 
-    
 
         cy.wait(2000)
 
-        cy.get('select[name="Vrsta"]').select('Studentski');
+        cy.get('#mui-component-select-Vrsta').click();
 
-        cy.contains('button', "Pretraga Korisnika").click();
+        cy.get('[role="option"]').contains('Studentski').click()
+
         
         cy.wait(2000)
         
