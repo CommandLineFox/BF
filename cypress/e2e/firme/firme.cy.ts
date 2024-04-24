@@ -20,7 +20,7 @@ describe('Provera firme spec', () => {
     cy.contains('button', 'Dodaj Firmu').click();
     cy.wait(2000);
 
-    it('should submit form with valid data', () => {
+   
         cy.get('input[name="nazivPreduzeca"]').type('TribalCamping');
         cy.get('input[name="brojTelefona"]').type('123456789');
         cy.get('input[name="brojFaksa"]').type('987654321');
@@ -33,7 +33,7 @@ describe('Provera firme spec', () => {
     
         // Assert success message or any other behavior upon successful submission
         cy.wait(2000);
-      });
+      
   })
 
   it('Admin dodavanje firme no naziv', () => {
@@ -48,7 +48,7 @@ describe('Provera firme spec', () => {
     cy.contains('button', 'Dodaj Firmu').click();
     cy.wait(2000);
 
-    it('should submit form with valid data', () => {
+    
         cy.get('input[name="brojTelefona"]').type('123456789');
         cy.get('input[name="brojFaksa"]').type('987654321');
         cy.get('input[name="pib"]').type('1234567890123');
@@ -60,7 +60,7 @@ describe('Provera firme spec', () => {
     
         // Assert success message or any other behavior upon successful submission
         cy.wait(2000);
-      });
+      
   })
  
   it('Admin dodavanje firme no broj telefona', () => {
@@ -75,7 +75,7 @@ describe('Provera firme spec', () => {
     cy.contains('button', 'Dodaj Firmu').click();
     cy.wait(2000);
 
-    it('should submit form with valid data', () => {
+    
         cy.get('input[name="nazivPreduzeca"]').type('TribalCamping');
         cy.get('input[name="brojFaksa"]').type('987654321');
         cy.get('input[name="pib"]').type('1234567890123');
@@ -87,7 +87,7 @@ describe('Provera firme spec', () => {
     
         // Assert success message or any other behavior upon successful submission
         cy.wait(2000);
-      });
+      
   })
 
   it('Admin dodavanje firme no faks', () => {
@@ -102,7 +102,7 @@ describe('Provera firme spec', () => {
     cy.contains('button', 'Dodaj Firmu').click();
     cy.wait(2000);
 
-    it('should submit form with valid data', () => {
+    
         cy.get('input[name="nazivPreduzeca"]').type('TribalCamping');
         cy.get('input[name="brojTelefona"]').type('123456789');
         cy.get('input[name="pib"]').type('1234567890123');
@@ -114,7 +114,7 @@ describe('Provera firme spec', () => {
     
         // Assert success message or any other behavior upon successful submission
         cy.wait(2000);
-      });
+      
   })
 
   it('Admin dodavanje firme', () => {
@@ -129,7 +129,7 @@ describe('Provera firme spec', () => {
     cy.contains('button', 'Dodaj Firmu').click();
     cy.wait(2000);
 
-    it('should submit form with valid data no pid', () => {
+    
         cy.get('input[name="nazivPreduzeca"]').type('TribalCamping');
         cy.get('input[name="brojTelefona"]').type('123456789');
         cy.get('input[name="brojFaksa"]').type('987654321');
@@ -141,10 +141,10 @@ describe('Provera firme spec', () => {
     
         // Assert success message or any other behavior upon successful submission
         cy.wait(2000);
-      });
+      
   })
 
-  it('Admin dodavanje firme', () => {
+  it('Admin dodavanje firme  no maticni', () => {
    
     cy.wait(2000);
 
@@ -153,10 +153,10 @@ describe('Provera firme spec', () => {
 
   
 
-    cy.contains('button', 'Dodaj Firmu no maticni').click();
+    cy.contains('button', 'Dodaj Firmu').click();
     cy.wait(2000);
 
-    it('should submit form with valid data', () => {
+    
         cy.get('input[name="nazivPreduzeca"]').type('TribalCamping');
         cy.get('input[name="brojTelefona"]').type('123456789');
         cy.get('input[name="brojFaksa"]').type('987654321');
@@ -168,10 +168,10 @@ describe('Provera firme spec', () => {
     
         // Assert success message or any other behavior upon successful submission
         cy.wait(2000);
-      });
+      
   })
 
-  it('Admin dodavanje firme', () => {
+  it('Admin dodavanje firme no sifradelatnost', () => {
    
     cy.wait(2000);
 
@@ -180,10 +180,10 @@ describe('Provera firme spec', () => {
 
   
 
-    cy.contains('button', 'Dodaj Firmu no sifradelatnost').click();
+    cy.contains('button', 'Dodaj Firmu').click();
     cy.wait(2000);
 
-    it('should submit form with valid data', () => {
+    
         cy.get('input[name="nazivPreduzeca"]').type('TribalCamping');
         cy.get('input[name="brojTelefona"]').type('123456789');
         cy.get('input[name="brojFaksa"]').type('987654321');
@@ -195,10 +195,10 @@ describe('Provera firme spec', () => {
     
         // Assert success message or any other behavior upon successful submission
         cy.wait(2000);
-      });
+      
   })
 
-  it('Admin dodavanje firme', () => {
+  it('Admin dodavanje firme no registarskiBroj', () => {
    
     cy.wait(2000);
 
@@ -207,10 +207,10 @@ describe('Provera firme spec', () => {
 
   
 
-    cy.contains('button', 'Dodaj Firmu no registarskiBroj').click();
+    cy.contains('button', 'Dodaj Firmu').click();
     cy.wait(2000);
 
-    it('should submit form with valid data', () => {
+    
         cy.get('input[name="nazivPreduzeca"]').type('TribalCamping');
         cy.get('input[name="brojTelefona"]').type('123456789');
         cy.get('input[name="brojFaksa"]').type('987654321');
@@ -222,7 +222,7 @@ describe('Provera firme spec', () => {
     
         // Assert success message or any other behavior upon successful submission
         cy.wait(2000);
-      });
+      
   })
 
 
