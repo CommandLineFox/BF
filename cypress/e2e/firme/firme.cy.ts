@@ -7,6 +7,7 @@ describe('Provera firme spec', () => {
   after(() => {
     //logout(cy)
   })
+  
   it('Admin dodavanje firme', () => {
    
     cy.wait(200);
@@ -33,9 +34,196 @@ describe('Provera firme spec', () => {
         // Assert success message or any other behavior upon successful submission
         cy.wait(2000);
       });
-
-    
   })
 
+  it('Admin dodavanje firme no naziv', () => {
+   
+    cy.wait(200);
+
+    cy.visit('http://localhost:3000/listaFirmi');
+    cy.wait(200);
+
+  
+
+    cy.contains('button', 'Dodaj Firmu').click();
+    cy.wait(200);
+
+    it('should submit form with valid data', () => {
+        cy.get('input[name="brojTelefona"]').type('123456789');
+        cy.get('input[name="brojFaksa"]').type('987654321');
+        cy.get('input[name="pib"]').type('1234567890123');
+        cy.get('input[name="maticniBroj"]').type('123456789');
+        cy.get('input[name="sifraDelatnosti"]').type('123456');
+        cy.get('input[name="registarskiBroj"]').type('123456789');
+    
+        cy.get('button').contains('Kreiraj').click();
+    
+        // Assert success message or any other behavior upon successful submission
+        cy.wait(2000);
+      });
+  })
  
+  it('Admin dodavanje firme no broj telefona', () => {
+   
+    cy.wait(200);
+
+    cy.visit('http://localhost:3000/listaFirmi');
+    cy.wait(200);
+
+  
+
+    cy.contains('button', 'Dodaj Firmu').click();
+    cy.wait(200);
+
+    it('should submit form with valid data', () => {
+        cy.get('input[name="nazivPreduzeca"]').type('TribalCamping');
+        cy.get('input[name="brojFaksa"]').type('987654321');
+        cy.get('input[name="pib"]').type('1234567890123');
+        cy.get('input[name="maticniBroj"]').type('123456789');
+        cy.get('input[name="sifraDelatnosti"]').type('123456');
+        cy.get('input[name="registarskiBroj"]').type('123456789');
+    
+        cy.get('button').contains('Kreiraj').click();
+    
+        // Assert success message or any other behavior upon successful submission
+        cy.wait(2000);
+      });
+  })
+
+  it('Admin dodavanje firme no faks', () => {
+   
+    cy.wait(200);
+
+    cy.visit('http://localhost:3000/listaFirmi');
+    cy.wait(200);
+
+  
+
+    cy.contains('button', 'Dodaj Firmu').click();
+    cy.wait(200);
+
+    it('should submit form with valid data', () => {
+        cy.get('input[name="nazivPreduzeca"]').type('TribalCamping');
+        cy.get('input[name="brojTelefona"]').type('123456789');
+        cy.get('input[name="pib"]').type('1234567890123');
+        cy.get('input[name="maticniBroj"]').type('123456789');
+        cy.get('input[name="sifraDelatnosti"]').type('123456');
+        cy.get('input[name="registarskiBroj"]').type('123456789');
+    
+        cy.get('button').contains('Kreiraj').click();
+    
+        // Assert success message or any other behavior upon successful submission
+        cy.wait(2000);
+      });
+  })
+
+  it('Admin dodavanje firme', () => {
+   
+    cy.wait(200);
+
+    cy.visit('http://localhost:3000/listaFirmi');
+    cy.wait(200);
+
+  
+
+    cy.contains('button', 'Dodaj Firmu').click();
+    cy.wait(200);
+
+    it('should submit form with valid data no pid', () => {
+        cy.get('input[name="nazivPreduzeca"]').type('TribalCamping');
+        cy.get('input[name="brojTelefona"]').type('123456789');
+        cy.get('input[name="brojFaksa"]').type('987654321');
+        cy.get('input[name="maticniBroj"]').type('123456789');
+        cy.get('input[name="sifraDelatnosti"]').type('123456');
+        cy.get('input[name="registarskiBroj"]').type('123456789');
+    
+        cy.get('button').contains('Kreiraj').click();
+    
+        // Assert success message or any other behavior upon successful submission
+        cy.wait(2000);
+      });
+  })
+
+  it('Admin dodavanje firme', () => {
+   
+    cy.wait(200);
+
+    cy.visit('http://localhost:3000/listaFirmi');
+    cy.wait(200);
+
+  
+
+    cy.contains('button', 'Dodaj Firmu no maticni').click();
+    cy.wait(200);
+
+    it('should submit form with valid data', () => {
+        cy.get('input[name="nazivPreduzeca"]').type('TribalCamping');
+        cy.get('input[name="brojTelefona"]').type('123456789');
+        cy.get('input[name="brojFaksa"]').type('987654321');
+        cy.get('input[name="pib"]').type('1234567890123');
+        cy.get('input[name="sifraDelatnosti"]').type('123456');
+        cy.get('input[name="registarskiBroj"]').type('123456789');
+    
+        cy.get('button').contains('Kreiraj').click();
+    
+        // Assert success message or any other behavior upon successful submission
+        cy.wait(2000);
+      });
+  })
+
+  it('Admin dodavanje firme', () => {
+   
+    cy.wait(200);
+
+    cy.visit('http://localhost:3000/listaFirmi');
+    cy.wait(200);
+
+  
+
+    cy.contains('button', 'Dodaj Firmu no sifradelatnost').click();
+    cy.wait(200);
+
+    it('should submit form with valid data', () => {
+        cy.get('input[name="nazivPreduzeca"]').type('TribalCamping');
+        cy.get('input[name="brojTelefona"]').type('123456789');
+        cy.get('input[name="brojFaksa"]').type('987654321');
+        cy.get('input[name="pib"]').type('1234567890123');
+        cy.get('input[name="maticniBroj"]').type('123456789');
+        cy.get('input[name="registarskiBroj"]').type('123456789');
+    
+        cy.get('button').contains('Kreiraj').click();
+    
+        // Assert success message or any other behavior upon successful submission
+        cy.wait(2000);
+      });
+  })
+
+  it('Admin dodavanje firme', () => {
+   
+    cy.wait(200);
+
+    cy.visit('http://localhost:3000/listaFirmi');
+    cy.wait(200);
+
+  
+
+    cy.contains('button', 'Dodaj Firmu no registarskiBroj').click();
+    cy.wait(200);
+
+    it('should submit form with valid data', () => {
+        cy.get('input[name="nazivPreduzeca"]').type('TribalCamping');
+        cy.get('input[name="brojTelefona"]').type('123456789');
+        cy.get('input[name="brojFaksa"]').type('987654321');
+        cy.get('input[name="pib"]').type('1234567890123');
+        cy.get('input[name="maticniBroj"]').type('123456789');
+        cy.get('input[name="sifraDelatnosti"]').type('123456');
+    
+        cy.get('button').contains('Kreiraj').click();
+    
+        // Assert success message or any other behavior upon successful submission
+        cy.wait(2000);
+      });
+  })
+
+  
 })
