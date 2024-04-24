@@ -219,6 +219,7 @@ const CreateUserPage: React.FC = () => {
         <FormControl variant="outlined" fullWidth margin="normal">
           <InputLabel id="sex-label">Pol</InputLabel>
           <StyledSelect
+            id ="PolId"
             labelId="sex-label"
             name="Pol"
             value={formData.pol}
