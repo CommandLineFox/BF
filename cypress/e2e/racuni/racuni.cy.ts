@@ -7,7 +7,7 @@ describe('Provera racuna', () => {
   after(() => {
     //logout(cy)
   })
-  it('pravi racun', () => {
+  it('pravi racun Tekuci', () => {
 
     cy.wait(2000)
     cy.get('table tbody tr:first-child td:first-child').click();
@@ -38,4 +38,35 @@ describe('Provera racuna', () => {
         cy.contains('button', "Kreiraj").click();
 
     })
+
+
+    it('pravi racun Devizni', () => {
+
+      cy.wait(2000)
+      cy.get('table tbody tr:first-child td:first-child').click();
+  
+  
+          cy.wait(2000)
+          cy.contains('button', "Dodaj racun").click();
+  
+  
+          cy.wait(2000)
+  
+          cy.get('#mui-component-select-Tip').click();
+  
+          cy.get('[role="option"]').contains('Devizni').click()
+  
+  
+          cy.wait(2000)
+
+          cy.get('input[type="checkbox"]').check();
+  
+          
+          cy.contains('button', "Pretraga Korisnika").click();
+  
+          cy.wait(2000)
+          
+          cy.contains('button', "Kreiraj").click();
+  
+      })
 })
