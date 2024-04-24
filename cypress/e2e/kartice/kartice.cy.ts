@@ -96,13 +96,4 @@ describe('Kartice spec', () => {
         cy.contains('button', 'Aktiviraj').click();
         cy.wait(1000);
     })
-    cy.get('tbody > tr').first().click();
-    cy.wait(2000);
-    cy.contains('button', 'Deaktiviraj').click();
-    cy.wait(1000);
-    cy.contains('button', 'OK').click();
-    cy.wait(1000);
-    cy.contains('button', 'Aktiviraj').click();
-    cy.wait(1000);
-})
 })

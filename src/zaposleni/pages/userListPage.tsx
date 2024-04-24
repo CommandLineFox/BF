@@ -91,7 +91,7 @@ const UserListPage: React.FC = () => {
           <AppBar position="static" >
             <StyledTabs value={0}>
               <Tab label="Lista Korisnika" />
-              <ButtonTab onClick={handleCreateUser}
+              <ButtonTab id="dodajKorisnikaDugme" onClick={handleCreateUser}
                 label="Dodaj Korisnika" />
             </StyledTabs>
           </AppBar>

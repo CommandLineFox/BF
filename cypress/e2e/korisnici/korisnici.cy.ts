@@ -9,7 +9,7 @@ describe('Provera kursa spec', () => {
   })
   it('Admin dodavanje korisnika', () => {
    
-    cy.contains('Dodaj Korisnika', 'OK').click();
+    cy.get('#dodajKorisnikaDugme').click();
     cy.wait(200);
 
     const ime = 'Bogdan';
