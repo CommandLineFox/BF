@@ -19,8 +19,6 @@ describe('Provera firme spec', () => {
     cy.get('#dodaj-zaposlenog-tab').click({ force: true });
     cy.wait(2000);
 
-    it('should submit form with valid data', () => {
-    
     cy.get('input[name="ime"]').type('Marko');
     cy.get('input[name="prezime"]').type('Markovic');
     cy.get('input[name="username"]').type('marko123');
@@ -40,8 +38,8 @@ describe('Provera firme spec', () => {
 
     cy.get('button[type="submit"]').click();
 
-        cy.wait(2000);
-      });
+    cy.wait(2000);
+  
 
   })
 
@@ -57,8 +55,7 @@ describe('Provera firme spec', () => {
     cy.get('#dodaj-zaposlenog-tab').click({ force: true });
     cy.wait(2000);
 
-    it('should submit form with valid data', () => {
-    
+
     cy.get('input[name="prezime"]').type('Markovic');
     cy.get('input[name="username"]').type('marko123');
     cy.get('input[name="jmbg"]').type('1234567890123');
@@ -77,8 +74,8 @@ describe('Provera firme spec', () => {
 
     cy.get('button[type="submit"]').click();
 
-        cy.wait(2000);
-      });
+    cy.wait(2000);
+  
 
   })
 
