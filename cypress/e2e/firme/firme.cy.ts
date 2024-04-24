@@ -10,15 +10,15 @@ describe('Provera firme spec', () => {
   
   it('Admin dodavanje firme', () => {
    
-    cy.wait(200);
+    cy.wait(2000);
 
     cy.visit('http://localhost:3000/listaFirmi');
-    cy.wait(200);
+    cy.wait(2000);
 
   
 
     cy.contains('button', 'Dodaj Firmu').click();
-    cy.wait(200);
+    cy.wait(2000);
 
     it('should submit form with valid data', () => {
         cy.get('input[name="nazivPreduzeca"]').type('TribalCamping');
@@ -38,15 +38,15 @@ describe('Provera firme spec', () => {
 
   it('Admin dodavanje firme no naziv', () => {
    
-    cy.wait(200);
+    cy.wait(2000);
 
     cy.visit('http://localhost:3000/listaFirmi');
-    cy.wait(200);
+    cy.wait(2000);
 
   
 
     cy.contains('button', 'Dodaj Firmu').click();
-    cy.wait(200);
+    cy.wait(2000);
 
     it('should submit form with valid data', () => {
         cy.get('input[name="brojTelefona"]').type('123456789');
@@ -65,15 +65,15 @@ describe('Provera firme spec', () => {
  
   it('Admin dodavanje firme no broj telefona', () => {
    
-    cy.wait(200);
+    cy.wait(2000);
 
     cy.visit('http://localhost:3000/listaFirmi');
-    cy.wait(200);
+    cy.wait(2000);
 
   
 
     cy.contains('button', 'Dodaj Firmu').click();
-    cy.wait(200);
+    cy.wait(2000);
 
     it('should submit form with valid data', () => {
         cy.get('input[name="nazivPreduzeca"]').type('TribalCamping');
@@ -92,15 +92,15 @@ describe('Provera firme spec', () => {
 
   it('Admin dodavanje firme no faks', () => {
    
-    cy.wait(200);
+    cy.wait(2000);
 
     cy.visit('http://localhost:3000/listaFirmi');
-    cy.wait(200);
+    cy.wait(2000);
 
   
 
     cy.contains('button', 'Dodaj Firmu').click();
-    cy.wait(200);
+    cy.wait(2000);
 
     it('should submit form with valid data', () => {
         cy.get('input[name="nazivPreduzeca"]').type('TribalCamping');
@@ -119,15 +119,15 @@ describe('Provera firme spec', () => {
 
   it('Admin dodavanje firme', () => {
    
-    cy.wait(200);
+    cy.wait(2000);
 
     cy.visit('http://localhost:3000/listaFirmi');
-    cy.wait(200);
+    cy.wait(2000);
 
   
 
     cy.contains('button', 'Dodaj Firmu').click();
-    cy.wait(200);
+    cy.wait(2000);
 
     it('should submit form with valid data no pid', () => {
         cy.get('input[name="nazivPreduzeca"]').type('TribalCamping');
@@ -146,15 +146,15 @@ describe('Provera firme spec', () => {
 
   it('Admin dodavanje firme', () => {
    
-    cy.wait(200);
+    cy.wait(2000);
 
     cy.visit('http://localhost:3000/listaFirmi');
-    cy.wait(200);
+    cy.wait(2000);
 
   
 
     cy.contains('button', 'Dodaj Firmu no maticni').click();
-    cy.wait(200);
+    cy.wait(2000);
 
     it('should submit form with valid data', () => {
         cy.get('input[name="nazivPreduzeca"]').type('TribalCamping');
@@ -173,15 +173,15 @@ describe('Provera firme spec', () => {
 
   it('Admin dodavanje firme', () => {
    
-    cy.wait(200);
+    cy.wait(2000);
 
     cy.visit('http://localhost:3000/listaFirmi');
-    cy.wait(200);
+    cy.wait(2000);
 
   
 
     cy.contains('button', 'Dodaj Firmu no sifradelatnost').click();
-    cy.wait(200);
+    cy.wait(2000);
 
     it('should submit form with valid data', () => {
         cy.get('input[name="nazivPreduzeca"]').type('TribalCamping');
@@ -200,15 +200,15 @@ describe('Provera firme spec', () => {
 
   it('Admin dodavanje firme', () => {
    
-    cy.wait(200);
+    cy.wait(2000);
 
     cy.visit('http://localhost:3000/listaFirmi');
-    cy.wait(200);
+    cy.wait(2000);
 
   
 
     cy.contains('button', 'Dodaj Firmu no registarskiBroj').click();
-    cy.wait(200);
+    cy.wait(2000);
 
     it('should submit form with valid data', () => {
         cy.get('input[name="nazivPreduzeca"]').type('TribalCamping');
@@ -225,5 +225,5 @@ describe('Provera firme spec', () => {
       });
   })
 
-  
+
 })
