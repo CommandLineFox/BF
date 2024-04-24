@@ -21,6 +21,8 @@ describe('Provera racuna', () => {
 
         cy.get('#mui-component-select-Tip').click();
 
+        cy.get('[role="option"]').contains('Tekuci').click()
+
     
 
         cy.wait(2000)
