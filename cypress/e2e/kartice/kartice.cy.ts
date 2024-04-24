@@ -91,7 +91,7 @@ it('Rad sa karticama aktiviraj deaktiviraj', () => {
     cy.wait(2000);
     cy.contains('button', 'Deaktiviraj').click();
     cy.wait(1000);
-    cy.contains('button', 'Ok').click();
+    cy.contains('button', 'OK').click();
     cy.wait(1000);
     cy.contains('button', 'Aktiviraj').click();
     cy.wait(1000);
