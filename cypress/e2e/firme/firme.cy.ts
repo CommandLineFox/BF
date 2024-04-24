@@ -9,6 +9,8 @@ describe('Provera firme spec', () => {
   })
   it('Admin dodavanje firme', () => {
    
+    cy.wait(200);
+
     cy.visit('http://localhost:3000/listaFirmi');
     cy.wait(200);
 
