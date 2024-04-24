@@ -19,7 +19,7 @@ describe('Provera racuna', () => {
 
         cy.wait(2000)
 
-        cy.get('select[name="Tip"]').select('tekuci');
+        cy.get('#mui-component-select-Tip').select('tekuci');
 
         cy.wait(2000)
 
