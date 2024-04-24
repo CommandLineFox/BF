@@ -37,8 +37,7 @@ describe('Provera firme spec', () => {
     // Opciono: Označavanje dozvola
     cy.get('input[type="checkbox"]').check();
 
-    cy.get('button[type="submit"]').click();
-
+    cy.get('button').contains('Kreiraj').click();
     cy.wait(2000);
   
 
@@ -74,7 +73,7 @@ describe('Provera firme spec', () => {
     // Opciono: Označavanje dozvola
     cy.get('input[type="checkbox"]').check();
 
-    cy.get('button[type="submit"]').click();
+    cy.get('button').contains('Kreiraj').click();
 
     cy.wait(2000);
   
@@ -111,7 +110,7 @@ describe('Provera firme spec', () => {
     // Opciono: Označavanje dozvola
     cy.get('input[type="checkbox"]').check();
 
-    cy.get('button[type="submit"]').click();
+    cy.get('button').contains('Kreiraj').click();
 
         cy.wait(2000);
       });
@@ -149,7 +148,7 @@ describe('Provera firme spec', () => {
     // Opciono: Označavanje dozvola
     cy.get('input[type="checkbox"]').check();
 
-    cy.get('button[type="submit"]').click();
+    cy.get('button').contains('Kreiraj').click();
 
         cy.wait(2000);
       });
@@ -187,7 +186,7 @@ describe('Provera firme spec', () => {
     // Opciono: Označavanje dozvola
     cy.get('input[type="checkbox"]').check();
 
-    cy.get('button[type="submit"]').click();
+    cy.get('button').contains('Kreiraj').click();
 
         cy.wait(2000);
       });
@@ -224,7 +223,7 @@ describe('Provera firme spec', () => {
     // Opciono: Označavanje dozvola
     cy.get('input[type="checkbox"]').check();
 
-    cy.get('button[type="submit"]').click();
+    cy.get('button').contains('Kreiraj').click();
 
         cy.wait(2000);
       });
@@ -262,7 +261,7 @@ describe('Provera firme spec', () => {
     // Opciono: Označavanje dozvola
     cy.get('input[type="checkbox"]').check();
 
-    cy.get('button[type="submit"]').click();
+    cy.get('button').contains('Kreiraj').click();
 
         cy.wait(2000);
       });
@@ -300,7 +299,7 @@ describe('Provera firme spec', () => {
     // Opciono: Označavanje dozvola
     cy.get('input[type="checkbox"]').check();
 
-    cy.get('button[type="submit"]').click();
+    cy.get('button').contains('Kreiraj').click();
 
         cy.wait(2000);
       });
@@ -338,7 +337,7 @@ describe('Provera firme spec', () => {
     // Opciono: Označavanje dozvola
     cy.get('input[type="checkbox"]').check();
 
-    cy.get('button[type="submit"]').click();
+    cy.get('button').contains('Kreiraj').click();
 
         cy.wait(2000);
       });
@@ -376,7 +375,7 @@ describe('Provera firme spec', () => {
     // Opciono: Označavanje dozvola
     cy.get('input[type="checkbox"]').check();
 
-    cy.get('button[type="submit"]').click();
+    cy.get('button').contains('Kreiraj').click();
 
         cy.wait(2000);
       });
@@ -414,7 +413,7 @@ describe('Provera firme spec', () => {
     // Opciono: Označavanje dozvola
     cy.get('input[type="checkbox"]').check();
 
-    cy.get('button[type="submit"]').click();
+    cy.get('button').contains('Kreiraj').click();
 
         cy.wait(2000);
       });
@@ -452,7 +451,7 @@ describe('Provera firme spec', () => {
     // Opciono: Označavanje dozvola
     cy.get('input[type="checkbox"]').check();
 
-    cy.get('button[type="submit"]').click();
+    cy.get('button').contains('Kreiraj').click();
 
         cy.wait(2000);
       });
@@ -490,7 +489,7 @@ describe('Provera firme spec', () => {
     // Opciono: Označavanje dozvola
     cy.get('input[type="checkbox"]').check();
 
-    cy.get('button[type="submit"]').click();
+    cy.get('button').contains('Kreiraj').click();
 
         cy.wait(2000);
       });
