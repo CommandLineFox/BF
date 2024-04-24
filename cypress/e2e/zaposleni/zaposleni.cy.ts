@@ -9,15 +9,15 @@ describe('Provera firme spec', () => {
   })
   it('Admin dodavanje firme', () => {
    
-    cy.wait(200);
+    cy.wait(2000);
 
     cy.visit('http://localhost:3000/listaZaposlenih');
-    cy.wait(200);
+    cy.wait(2000);
 
   
 
     cy.get('#lista-zaposlenih-tab').click();
-    cy.wait(200);
+    cy.wait(2000);
 
     it('should submit form with valid data', () => {
     
@@ -47,15 +47,15 @@ describe('Provera firme spec', () => {
 
   it('Admin dodavanje firme no name', () => {
    
-    cy.wait(200);
+    cy.wait(2000);
 
     cy.visit('http://localhost:3000/listaZaposlenih');
-    cy.wait(200);
+    cy.wait(2000);
 
   
 
     cy.get('#lista-zaposlenih-tab').click();
-    cy.wait(200);
+    cy.wait(2000);
 
     it('should submit form with valid data', () => {
     
@@ -84,15 +84,15 @@ describe('Provera firme spec', () => {
 
   it('Admin dodavanje firme no suername', () => {
    
-    cy.wait(200);
+    cy.wait(2000);
 
     cy.visit('http://localhost:3000/listaZaposlenih');
-    cy.wait(200);
+    cy.wait(2000);
 
   
 
     cy.get('#lista-zaposlenih-tab').click();
-    cy.wait(200);
+    cy.wait(2000);
 
     it('should submit form with valid data', () => {
     
@@ -121,15 +121,15 @@ describe('Provera firme spec', () => {
 
   it('Admin dodavanje firme no username', () => {
    
-    cy.wait(200);
+    cy.wait(2000);
 
     cy.visit('http://localhost:3000/listaZaposlenih');
-    cy.wait(200);
+    cy.wait(2000);
 
   
 
     cy.get('#lista-zaposlenih-tab').click();
-    cy.wait(200);
+    cy.wait(2000);
 
     it('should submit form with valid data', () => {
     
@@ -159,15 +159,15 @@ describe('Provera firme spec', () => {
 
   it('Admin dodavanje firme no jmbg', () => {
    
-    cy.wait(200);
+    cy.wait(2000);
 
     cy.visit('http://localhost:3000/listaZaposlenih');
-    cy.wait(200);
+    cy.wait(2000);
 
   
 
     cy.get('#lista-zaposlenih-tab').click();
-    cy.wait(200);
+    cy.wait(2000);
 
     it('should submit form with valid data', () => {
     
@@ -197,15 +197,15 @@ describe('Provera firme spec', () => {
 
   it('Admin dodavanje firme', () => {
    
-    cy.wait(200);
+    cy.wait(2000);
 
     cy.visit('http://localhost:3000/listaZaposlenih');
-    cy.wait(200);
+    cy.wait(2000);
 
   
 
     cy.contains('button', 'Dodaj Zaposlenog no password').click();
-    cy.wait(200);
+    cy.wait(2000);
 
     it('should submit form with valid data', () => {
     
@@ -234,15 +234,15 @@ describe('Provera firme spec', () => {
 
   it('Admin dodavanje firme', () => {
    
-    cy.wait(200);
+    cy.wait(2000);
 
     cy.visit('http://localhost:3000/listaZaposlenih');
-    cy.wait(200);
+    cy.wait(2000);
 
   
 
     cy.get('#lista-zaposlenih-tab').click();
-    cy.wait(200);
+    cy.wait(2000);
 
     it('should submit form with valid data no date', () => {
     
@@ -272,15 +272,15 @@ describe('Provera firme spec', () => {
 
   it('Admin dodavanje firme', () => {
    
-    cy.wait(200);
+    cy.wait(2000);
 
     cy.visit('http://localhost:3000/listaZaposlenih');
-    cy.wait(200);
+    cy.wait(2000);
 
   
 
     cy.get('#lista-zaposlenih-tab').click();
-    cy.wait(200);
+    cy.wait(2000);
 
     it('should submit form with valid data no Pol', () => {
     
@@ -310,15 +310,15 @@ describe('Provera firme spec', () => {
 
   it('Admin dodavanje firme', () => {
    
-    cy.wait(200);
+    cy.wait(2000);
 
     cy.visit('http://localhost:3000/listaZaposlenih');
-    cy.wait(200);
+    cy.wait(2000);
 
   
 
     cy.get('#lista-zaposlenih-tab').click();
-    cy.wait(200);
+    cy.wait(2000);
 
     it('should submit form with valid data no adresa', () => {
     
@@ -348,15 +348,15 @@ describe('Provera firme spec', () => {
 
   it('Admin dodavanje firme no email', () => {
    
-    cy.wait(200);
+    cy.wait(2000);
 
     cy.visit('http://localhost:3000/listaZaposlenih');
-    cy.wait(200);
+    cy.wait(2000);
 
   
 
     cy.get('#lista-zaposlenih-tab').click();
-    cy.wait(200);
+    cy.wait(2000);
 
     it('should submit form with valid data', () => {
     
@@ -386,15 +386,15 @@ describe('Provera firme spec', () => {
 
   it('Admin dodavanje firme', () => {
    
-    cy.wait(200);
+    cy.wait(2000);
 
     cy.visit('http://localhost:3000/listaZaposlenih');
-    cy.wait(200);
+    cy.wait(2000);
 
   
 
     cy.contains('button', 'Dodaj Zaposlenog no brojtelefona').click();
-    cy.wait(200);
+    cy.wait(2000);
 
     it('should submit form with valid data', () => {
     
@@ -424,15 +424,15 @@ describe('Provera firme spec', () => {
 
   it('Admin dodavanje firme', () => {
    
-    cy.wait(200);
+    cy.wait(2000);
 
     cy.visit('http://localhost:3000/listaZaposlenih');
-    cy.wait(200);
+    cy.wait(2000);
 
   
 
     cy.get('#lista-zaposlenih-tab').click();
-    cy.wait(200);
+    cy.wait(2000);
 
     it('should submit form with valid data no radnik', () => {
     
@@ -462,15 +462,15 @@ describe('Provera firme spec', () => {
 
   it('Admin dodavanje firme', () => {
    
-    cy.wait(200);
+    cy.wait(2000);
 
     cy.visit('http://localhost:3000/listaZaposlenih');
-    cy.wait(200);
+    cy.wait(2000);
 
   
 
     cy.contains('button', 'Dodaj Zaposlenog no departmant').click();
-    cy.wait(200);
+    cy.wait(2000);
 
     it('should submit form with valid data', () => {
     
