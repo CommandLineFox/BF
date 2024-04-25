@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { TextField, Button, FormControl, InputLabel, Alert, Select, MenuItem } from '@mui/material';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { makeApiRequest } from '../../utils/apiRequest';
 import { UserRoutes } from 'utils/types';
 import KAlert from 'utils/alerts';
+import { Context } from 'App';
 
 const PageWrapper = styled.div`
   display: flex;
@@ -63,6 +64,7 @@ const CreateUserPage: React.FC = () => {
     pol: '',
   });
 
+  const ctx = useContext(Context);
   const navigate = useNavigate();
 
   const [fieldWarning, setFieldWarning] = useState<string>('');
@@ -128,6 +130,7 @@ const CreateUserPage: React.FC = () => {
     const letterOnlyRegex = /^[a-zA-Z]+$/
     if (!(letterOnlyRegex.test(formData.ime) && letterOnlyRegex.test(formData.prezime))) {
       setLetterOnlyWarning(true)
+      return
     } else {
       setLetterOnlyWarning(false)
     }
@@ -135,6 +138,7 @@ const CreateUserPage: React.FC = () => {
     const numbersOnlyRegex = /\d{13}/
     if (!(numbersOnlyRegex.test(formData.jmbg))) {
       setNumbersOnlyWarning(true)
+      return
     } else {
       setNumbersOnlyWarning(false)
     }
@@ -151,11 +155,13 @@ const CreateUserPage: React.FC = () => {
     const emailRegex = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/
     if (!(emailRegex.test(formData.email))) {
       setEmailWarning(true)
+      return
     } else {
       setEmailWarning(false)
     }
     const data = { ...formData, datumRodjenja: new Date(formData.datumRodjenja).getTime(), aktivan: true }
-    const res = await makeApiRequest(UserRoutes.user_add, 'POST', data)
+    const res = await makeApiRequest(UserRoutes.user_add, 'POST', data, false, false, ctx)
+
     if (res) {
       setSucessPopup(true)
     }
@@ -219,7 +225,7 @@ const CreateUserPage: React.FC = () => {
         <FormControl variant="outlined" fullWidth margin="normal">
           <InputLabel id="sex-label">Pol</InputLabel>
           <StyledSelect
-            id ="PolId"
+            id="PolId"
             labelId="sex-label"
             name="Pol"
             value={formData.pol}
