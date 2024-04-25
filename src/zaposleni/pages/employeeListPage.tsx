@@ -2,8 +2,9 @@ import { AppBar, Tabs, Tab } from '@mui/material';
 import EmployeeList from '../components/employeeList'
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { makeGetRequest } from '../../utils/apiRequest';
+import { Context } from 'App';
 
 const StyledTabs = styled(Tabs)`
   background-color: #f2f2f2;
@@ -59,11 +60,12 @@ const HeadingAndButtonWrapper = styled.div`
 
 const EmployeeListPage: React.FC = () => {
   const [emp, setEmp] = useState([])
+  const ctx = useContext(Context);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const employees = await makeGetRequest('/radnik');
+        const employees = await makeGetRequest('/radnik', ctx);
         setEmp(employees);
       } catch (error) {
         console.error('Error fetching employee list:', error);

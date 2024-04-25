@@ -2,8 +2,9 @@ import { AppBar, Tabs, Tab } from '@mui/material';
 import UserList from '../components/userList'
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { makeGetRequest } from '../../utils/apiRequest';
+import { Context } from 'App';
 
 const StyledTabs = styled(Tabs)`
   background-color: #f2f2f2;
@@ -59,11 +60,12 @@ const HeadingAndButtonWrapper = styled.div`
 
 const UserListPage: React.FC = () => {
   const [usrs, setUsrs] = useState([])
+  const ctx = useContext(Context);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const users = await makeGetRequest('/korisnik');
+        const users = await makeGetRequest('/korisnik', ctx);
         setUsrs(users);
       } catch (error) {
         console.error('Error fetching user list:', error);

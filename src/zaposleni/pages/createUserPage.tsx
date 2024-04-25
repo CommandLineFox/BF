@@ -66,14 +66,7 @@ const CreateUserPage: React.FC = () => {
 
   const ctx = useContext(Context);
   const navigate = useNavigate();
-
-  const [fieldWarning, setFieldWarning] = useState<string>('');
-  const [phoneWarning, setPhoneWarning] = useState<boolean>(false);
-  const [letterOnlyWarning, setLetterOnlyWarning] = useState<boolean>(false);
-  const [numbersOnlyWarning, setNumbersOnlyWarning] = useState<boolean>(false);
-  const [emailWarning, setEmailWarning] = useState<boolean>(false);
   const [kreiranjeRacuna, setKreiranjeRacuna] = useState<string>('');
-  const [successPopup, setSucessPopup] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -122,51 +115,43 @@ const CreateUserPage: React.FC = () => {
   const handleSumbit = async () => {
     for (const [key, value] of Object.entries(formData)) {
       if (key !== 'permisije' && value === '') {
-        setFieldWarning(key);
+        ctx?.setErrors([...ctx.errors, `Our Error: Popunite polje ${key}`])
         return;
       }
     }
-    setFieldWarning('')
     const letterOnlyRegex = /^[a-zA-Z]+$/
     if (!(letterOnlyRegex.test(formData.ime) && letterOnlyRegex.test(formData.prezime))) {
-      setLetterOnlyWarning(true)
+      ctx?.setErrors([...ctx.errors, 'Our Error: Prezime se mora sastojati iskljucivo od slova'])
       return
-    } else {
-      setLetterOnlyWarning(false)
     }
-
     const numbersOnlyRegex = /\d{13}/
     if (!(numbersOnlyRegex.test(formData.jmbg))) {
-      setNumbersOnlyWarning(true)
+      ctx?.setErrors([...ctx.errors, 'Our Error: Jmbg se mora sastojati od 13 cifara'])
       return
-    } else {
-      setNumbersOnlyWarning(false)
     }
 
     if (formData.brojTelefona !== '') {
       const phoneRegex = /^(06|\+)[0-9]+$/; //Change if you want only +... instead of 06....
       if (!phoneRegex.test(formData.brojTelefona)) {
-        setPhoneWarning(true)
+        ctx?.setErrors([...ctx.errors, 'Our Error: Broj telefona mora pocinjati sa 06 ili +'])
         return
-      } else {
-        setPhoneWarning(false)
       }
     }
     const emailRegex = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/
     if (!(emailRegex.test(formData.email))) {
-      setEmailWarning(true)
+      ctx?.setErrors([...ctx.errors, 'Our Error: Email mora biti validan'])
       return
-    } else {
-      setEmailWarning(false)
     }
     const data = { ...formData, datumRodjenja: new Date(formData.datumRodjenja).getTime(), aktivan: true }
     const res = await makeApiRequest(UserRoutes.user_add, 'POST', data, false, false, ctx)
 
     if (res) {
-      setSucessPopup(true)
+      ctx?.setErrors([...ctx.errors, 'Our Success: Korisnik je uspesno kreiran'])
     }
     if (kreiranjeRacuna) {
       navigate(`/kreirajRacun${kreiranjeRacuna}&jmbg=${formData.jmbg}`)
+    } else{
+      navigate(-1)
     }
   }
 
@@ -176,12 +161,6 @@ const CreateUserPage: React.FC = () => {
         Kreiranje korisnika
       </HeadingText>
       <FormWrapper>
-        {fieldWarning !== "" && <KAlert severity="error" exit={() => setFieldWarning('')}>Popunite polje '{fieldWarning}' .</KAlert>}
-        {phoneWarning && <KAlert severity="error" exit={() => setPhoneWarning(false)}>Broj telefona je u pogresnom formatu.</KAlert>}
-        {letterOnlyWarning && <KAlert severity="error" exit={() => setLetterOnlyWarning(false)}>Ime i prezime ne sme sadrzati brojeve.</KAlert>}
-        {numbersOnlyWarning && <KAlert severity="error" exit={() => setNumbersOnlyWarning(false)}>Jmbg mora sadrzati iskljucivo 13 cifara.</KAlert>}
-        {emailWarning && <KAlert severity="error" exit={() => setEmailWarning(false)}>Nevazeca mejl adresa.</KAlert>}
-        {successPopup && <KAlert severity="success" exit={() => setSucessPopup(false)}>Uspesno kreiran.</KAlert>}
         <StyledTextField
           label="Ime"
           name="ime"

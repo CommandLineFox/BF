@@ -30,7 +30,10 @@ export type Akcija = {
     change: string,
     dividendYield: string,
     lastRefresh: string,
-    nameDescription: string
+    nameDescription: string,
+    high: string,
+    low: string,
+    outstandingShares: string,
 }
 export type AkcijaList = {
     stocks: Akcija[]

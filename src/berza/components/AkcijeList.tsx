@@ -9,7 +9,7 @@ const AkcijeList: React.FC<AkcijaList> = ({ stocks }) => {
     const navigate = useNavigate()
     const handleSelect = (event: any) => {
         const id = event.currentTarget.id;
-        console.log(id)
+        navigate(`/detaljiAkcije?ticker=${id}`)
     };
 
     return (

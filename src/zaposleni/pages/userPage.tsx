@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableRow, Paper, TableHead, Button, Alert } from '@mui/material';
 import { Account, BankRoutes, UserRoutes } from '../../utils/types';
 import styled from 'styled-components';
@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { makeApiRequest, makeGetRequest } from '../../utils/apiRequest';
 import KAlert from 'utils/alerts';
 import { ScrollContainer } from 'utils/tableStyles';
+import { Context } from 'App';
 
 const PageWrapper = styled.div`
   display: flex;
@@ -72,6 +73,7 @@ const UserInfoTable: React.FC = () => {
   const [accounts, setAccounts] = useState<Account[]>([])
   const [jmbg, setJmbg] = useState('')
   const [successPopup, setSucessPopup] = useState<boolean>(false);
+  const ctx = useContext(Context);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -79,11 +81,11 @@ const UserInfoTable: React.FC = () => {
         const urlParams = new URLSearchParams(window.location.search);
         setJmbg(urlParams?.get('jmbg') ?? '');
         if (jmbg) {
-          const res = await makeGetRequest(`/korisnik/jmbg/${jmbg}`);
+          const res = await makeGetRequest(`/korisnik/jmbg/${jmbg}`, ctx);
           setUser(res);
           if (res?.id) {
             setId(res?.id)
-            const accs = await makeGetRequest(`/racuni/nadjiRacuneKorisnika/${res.id}`);
+            const accs = await makeGetRequest(`/racuni/nadjiRacuneKorisnika/${res.id}`, ctx);
             setAccounts(accs);
           }
         }
@@ -110,7 +112,7 @@ const UserInfoTable: React.FC = () => {
     }
   }
   const handleDeactivateUser = async () => {
-    const res = await makeApiRequest(UserRoutes.user, 'PUT', { ...user, aktivan: false })
+    const res = await makeApiRequest(UserRoutes.user, 'PUT', { ...user, aktivan: false }, false, false, ctx)
     if (res) {
       setSucessPopup(true)
     }
@@ -122,9 +124,9 @@ const UserInfoTable: React.FC = () => {
   }
 
   const handleDeactivateAccount = async (brojRacuna: string) => {
-    const res = await makeApiRequest(`${BankRoutes.account_find_by_number}/${brojRacuna}`, 'PUT')
+    const res = await makeApiRequest(`${BankRoutes.account_find_by_number}/${brojRacuna}`, 'PUT', {}, false, false, ctx)
     if (res) {
-      const accs = await makeGetRequest(`${BankRoutes.account_find_user_account}/${uid}`);
+      const accs = await makeGetRequest(`${BankRoutes.account_find_user_account}/${uid}`, ctx);
       setAccounts(accs);
 
       setSucessPopup(true)
