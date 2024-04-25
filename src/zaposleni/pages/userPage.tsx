@@ -151,7 +151,7 @@ const UserInfoTable: React.FC = () => {
                   <StyledTableCell component="th" scope="row">
                     {formatTitle(field)}
                   </StyledTableCell>
-                  <StyledTableCell>{field === "datumRodjenja" ? new Date(info).toDateString() : info}</StyledTableCell>
+                  <StyledTableCell>{field === "datumRodjenja" ? new Date(info).toLocaleDateString("en-de") : info}</StyledTableCell>
                   {/* {Array.isArray(info) ? <StyledTableCell>{info.join(", ")}</StyledTableCell> : <StyledTableCell>{info}</StyledTableCell>} */}
 
                 </TableRow>

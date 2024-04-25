@@ -154,13 +154,13 @@ const AccountInfoPage: React.FC = () => {
                 <StyledTableCell component="th" scope="row">
                   Datum kreiranja
                 </StyledTableCell>
-                <StyledTableCell>{new Date(account.datumKreiranja).toDateString()}</StyledTableCell>
+                <StyledTableCell>{new Date(account.datumKreiranja).toLocaleDateString("en-de")}</StyledTableCell>
               </TableRow>
               <TableRow key={'Datum isteka'}>
                 <StyledTableCell component="th" scope="row">
                   Datum isteka
                 </StyledTableCell>
-                <StyledTableCell>{new Date(account.datumIsteka).toDateString()}</StyledTableCell>
+                <StyledTableCell>{new Date(account.datumIsteka).toLocaleDateString("en-de")}</StyledTableCell>
               </TableRow>
               <TableRow key={'Status racuna'}>
                 <StyledTableCell component="th" scope="row">
@@ -235,10 +235,10 @@ const AccountInfoPage: React.FC = () => {
                     {(transakcija.svrhaPlacanja)}
                   </StyledTableCentered>
                   <StyledTableCentered component="th" scope="row">
-                    {(new Date(transakcija.vremeTransakcije).toDateString())}
+                    {(new Date(transakcija.vremeTransakcije).toLocaleDateString("en-de"))}
                   </StyledTableCentered>
                   <StyledTableCentered component="th" scope="row">
-                    {(new Date(transakcija.vremeIzvrsavanja).toDateString())}
+                    {(new Date(transakcija.vremeIzvrsavanja).toLocaleDateString("en-de"))}
                   </StyledTableCentered>
                 </StyledTableRow>
               ))}

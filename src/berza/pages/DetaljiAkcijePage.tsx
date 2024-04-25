@@ -190,6 +190,8 @@ const DetaljiAkcije: React.FC = () => {
 
   }, [ticker]);
 
+
+
   const oneYearAgo = new Date();
   oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
 
@@ -267,6 +269,12 @@ const DetaljiAkcije: React.FC = () => {
     }
   
   }
+
+  useEffect(() => {
+    if(oneYearAgo && dailyData && !graphData){
+      handleChangeGraph("1m")
+    }
+  },[oneYearAgo, dailyData, graphData])
 
   return (
     <PageWrapper>

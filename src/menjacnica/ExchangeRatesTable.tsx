@@ -30,7 +30,7 @@ const ExchangeRatesTable = () => {
 
   return (
     <ScrollContainer style={{ marginTop: 100 }}>
-      <Table sx={{ minWidth: 650, marginTop: 0 }}>
+      <Table sx={{ minWidth: 250, marginTop: 0 }}>
         <StyledTableHead>
           <TableRow>
             <StyledHeadTableCell>Valuta</StyledHeadTableCell>

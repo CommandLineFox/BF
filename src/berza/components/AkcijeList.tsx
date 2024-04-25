@@ -25,12 +25,12 @@ const AkcijeList: React.FC<AkcijaList> = ({ stocks }) => {
                         <StyledHeadTableCell>Poslednje azuriranje</StyledHeadTableCell>
                         <StyledHeadTableCell>Kupi</StyledHeadTableCell>
                         <StyledHeadTableCell>OTC</StyledHeadTableCell>
-                        <StyledHeadTableCell>FIX DIS</StyledHeadTableCell>
+                        <StyledHeadTableCell>Detalji</StyledHeadTableCell>
                     </TableRow>
                 </StyledTableHead>
                 <TableBody>
                     {stocks?.map((stock: Akcija) => (
-                        <StyledTableRow key={stock.ticker} id={stock.ticker} onClick={handleSelect}>
+                        <StyledTableRow key={stock.ticker} id={stock.ticker}>
                             <StyledTableCell>{stock.ticker}</StyledTableCell>
                             <StyledTableCell>{stock.price}</StyledTableCell>
                             <StyledTableCell>{stock.volume}</StyledTableCell>
@@ -41,8 +41,8 @@ const AkcijeList: React.FC<AkcijaList> = ({ stocks }) => {
                             <StyledTableCell><BuyOptionPopup /></StyledTableCell>
                             <StyledTableCell>
                                 <Button onClick={()=>{
-                                    navigate(`/opcije?ticker=${stock.ticker}&name=${stock.nameDescription.split(" is ")[0]}&price=${stock.price}`)}}>
-                                    Opcije</Button>
+                                    navigate(`/detaljiAkcije?ticker=${stock.ticker}`)}}>
+                                    Detaljni prikaz</Button>
                             </StyledTableCell>
                         </StyledTableRow>
                     ))}
