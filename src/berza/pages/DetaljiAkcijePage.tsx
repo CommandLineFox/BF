@@ -160,7 +160,7 @@ const DetaljiAkcije: React.FC = () => {
             const slicedAvgArr = averagePricesArray.slice(0, 3)
             setGraphData(slicedAvgArr)
             const formattedDates = dates.map((date): string  => new Date(date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }));
-            setGraphDataX(formattedDates.slice(0,3));
+            // setGraphDataX(formattedDates.slice(0,3));
           }
           if (stock) {
             setStock(stock)
