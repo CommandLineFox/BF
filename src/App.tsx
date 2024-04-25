@@ -128,7 +128,7 @@ function App() {
           <Box sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
             <VideoWrapper>
               <video autoPlay muted height="300" controls>
-                <source src="https://cdn.discordapp.com/attachments/1161024401001680987/1224340251385004052/stop.mp4?ex=661d22b7&is=660aadb7&hm=b023e16a8c263142fbeeed37e364132d6cf6a447561502c19c405b201cfa6040&" type="video/mp4" />
+                <source src="https://i.imgur.com/bQh6A8d.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </VideoWrapper>
