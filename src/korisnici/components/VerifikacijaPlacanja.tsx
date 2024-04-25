@@ -39,16 +39,16 @@ const VerifikacijaPlacanja = () => {
         try {
             const resultOtp = await makeApiRequest(`${UserRoutes.validate_otp}?email=${email}&password=${verifikacioniKod}`, "POST", {}, false, true)
             if ("Valid OTP" != await resultOtp.text())
-                return alert("LOS OTP"); // FRONTEND PROVERAVA
+                return Swal.fire("Greška", `<div id="resultfromswal">Pogrešan kod</div>`, "error")
         }
         catch (e) {
-            return alert("LOS OTP"); // FRONTEND PROVERAVA
+            return Swal.fire("Greška", `<div id="resultfromswal">Pogrešan kod</div>`, "error")
         }
 
         if (isNovaUplata(podaci)) {
             const data = await makeApiRequest(BankRoutes.transaction_new_payment, "POST", podaci, false, true)
             if (!data) {
-                Swal.fire("Greska", `<div id="resultfromswal">Neuspešno plaćanje</div>`, "error").then(() => {
+                Swal.fire("Greška", `<div id="resultfromswal">Neuspešno plaćanje</div>`, "error").then(() => {
                     window.location.reload()
                 })
                 localStorage.removeItem("uplataPodaci")
