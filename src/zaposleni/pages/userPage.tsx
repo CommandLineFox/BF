@@ -139,7 +139,7 @@ const UserInfoTable: React.FC = () => {
         Korisnik
       </HeadingText>
       <FormWrapper>
-      {successPopup && <KAlert severity="success" exit={() => setSucessPopup(false)}>Uspesno kreiran.</KAlert>}
+        {successPopup && <KAlert severity="success" exit={() => setSucessPopup(false)}>Uspesno kreiran.</KAlert>}
         <H2Text>
           Info
         </H2Text>
@@ -151,7 +151,7 @@ const UserInfoTable: React.FC = () => {
                   <StyledTableCell component="th" scope="row">
                     {formatTitle(field)}
                   </StyledTableCell>
-                  <StyledTableCell>{info}</StyledTableCell>
+                  <StyledTableCell>{field === "datumRodjenja" ? new Date(info).toDateString() : info}</StyledTableCell>
                   {/* {Array.isArray(info) ? <StyledTableCell>{info.join(", ")}</StyledTableCell> : <StyledTableCell>{info}</StyledTableCell>} */}
 
                 </TableRow>
