@@ -89,11 +89,11 @@ window.addEventListener('beforeunload', () => {
   localStorage.setItem('tokenRemovalTimestamp', Date.now().toString());
 });
 
-// const VideoWrapper = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// `
+const VideoWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 
 export interface ContextType {
   errors: Array<string>;
@@ -104,11 +104,11 @@ export interface ContextType {
 export const Context = createContext<ContextType | null>(null);
 const auth = getMe()
 function App() {
-  // const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(true);
 
-  // const handleClose = () => {
-  //   setOpen(false);
-  // };
+  const handleClose = () => {
+    setOpen(false);
+  };
   const [errors, setErrors] = useState([""]);
 
   useEffect(() => {
@@ -123,7 +123,7 @@ function App() {
   return (
     <>
       {/* RIP JWT STOP */}
-      {/* {!auth?.id &&
+      {!auth?.id &&
         <Dialog open={open} onClose={handleClose}>
           <Box sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
             <VideoWrapper>
@@ -138,16 +138,11 @@ function App() {
             <Button id='exitPosionPill' onClick={handleClose}>Exit</Button>
           </Box>
         </Dialog>
-      } */}
+      }
       {/* <WSTest></WSTest> */}
 
       <Context.Provider value={{ errors, setErrors }}>
-        {/* {errors && <AlertWrapper>
-          <ImgContainer>
-            <SvgImage src={process.env.PUBLIC_URL + "/ussr.svg"} alt="ussr" />
-          </ImgContainer>
-          {errors}
-        </AlertWrapper>} */}
+
         <AlertWrapperWrapper>
           {errors.length > 0 && errors[0] !== "" && errors?.map((err: string) => (
             <AlertWrapper key={err}>
