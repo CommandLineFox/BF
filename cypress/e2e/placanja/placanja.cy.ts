@@ -43,7 +43,7 @@ describe('Placanja spec', () => {
     cy.get("#submitbuttontransferform").click()
     cy.visit('http://localhost:3000/verifikacija')
     cy.get("button").last().click()
-    cy.wait(300)
+    cy.wait(1000)
     cy.get("input").last().invoke('val').then((value: any) => {
       if (!value) {
         return;
@@ -54,7 +54,7 @@ describe('Placanja spec', () => {
 
       cy.get("button").last().click()
 
-      cy.get('.swal2-title').should('not.exist');
+      cy.get('#resultfromswal').should('have.text', 'Pogrešan kod');
     });
   })
 
@@ -116,7 +116,7 @@ describe('Placanja spec', () => {
     cy.get("#submitbuttonpaymentform").click()
     cy.visit('http://localhost:3000/verifikacija')
     cy.get("button").last().click()
-    cy.wait(300)
+    cy.wait(1000)
     cy.get("input").last().invoke('val').then((value: any) => {
       if (!value) {
         return;
@@ -127,7 +127,7 @@ describe('Placanja spec', () => {
 
       cy.get("button").last().click()
 
-      cy.get('.swal2-title').should('not.exist');
+      cy.get('#resultfromswal').should('have.text', 'Pogrešan kod');
     });
   })
 
