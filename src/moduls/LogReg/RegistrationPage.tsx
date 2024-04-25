@@ -261,11 +261,11 @@ const RegistrationPage = () => {
         return (
             <Container component="main" maxWidth="sm">
                 <StyledTitle variant="h5">Registracija korisnika - Korak 3</StyledTitle>
-                <Typography color={eightChar?'green':'red'} variant="body1">Lozinka mora imati bar 8 karaktera</Typography>
-                <Typography color={capitalLetter?'green':'red'} variant="body1">Lozinka mora imati bar jedno veliko slovo</Typography>
-                <Typography color={lowerLetter?'green':'red'} variant="body1">Lozinka mora imati bar jedno malo slovo</Typography>
-                <Typography color={twoNumbers?'green':'red'} variant="body1">Lozinka mora imati bar dva broja</Typography>
-                <Typography color={specChar?'green':'red'} variant="body1">Lozinka mora imati bar jedan specijalni karakter</Typography>
+                <Typography fontWeight={'bold'} color={eightChar?'green':'red'} variant="body1">Lozinka mora imati bar 8 karaktera</Typography>
+                <Typography fontWeight={'bold'} color={capitalLetter?'green':'red'} variant="body1">Lozinka mora imati bar jedno veliko slovo</Typography>
+                <Typography fontWeight={'bold'} color={lowerLetter?'green':'red'} variant="body1">Lozinka mora imati bar jedno malo slovo</Typography>
+                <Typography fontWeight={'bold'} color={twoNumbers?'green':'red'} variant="body1">Lozinka mora imati bar dva broja</Typography>
+                <Typography fontWeight={'bold'} color={specChar?'green':'red'} variant="body1">Lozinka mora imati bar jedan specijalni karakter</Typography>
 
                 <Box component="form" noValidate sx={{ mt: 3 }}>
                     <TextField
